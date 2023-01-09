@@ -19,7 +19,7 @@ const Hero = () => {
                 fontFamily: "Bogart,Recoleta,Helvetica Neue,Helvetica,Arial,sans-serif"
             }}>
 
-                Hi. I'm Parth.
+                Hi. I&apos;m Parth.
                 <span style={{ display: "block" }}>
 
                     A Full-Stack Developer.
