@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import cookieCutter from "cookie-cutter"
-import { useUser } from '../server/middelwares/useUser'
+import { getUser } from '../server/middelwares/useUser'
 import { Navbar } from '../components/NavBar/Navbar'
 import Hero from '../components/work/Hero'
 export default function Home({name}) {
@@ -14,7 +14,7 @@ export default function Home({name}) {
 }
 
 export async function getServerSideProps(context) {
-  const user = useUser(context)
+  const user = getUser(context)
   console.log(user)
   // ...
   return { 
