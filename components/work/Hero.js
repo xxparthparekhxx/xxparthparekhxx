@@ -1,6 +1,7 @@
 import React from 'react'
 import { flex } from '../../styles/flex'
 import useWindowDimensions from '../../utils/WindowDimensions.';
+import Eye from '../eye/eye';
 import styles  from  "./styles.module.css";
 
 const Hero = () => {
@@ -21,7 +22,7 @@ const Hero = () => {
                 </span>
             </div>
             <div className={styles.eyebox}>
-                
+                <Eye></Eye>
             </div>
         </div>
     )
