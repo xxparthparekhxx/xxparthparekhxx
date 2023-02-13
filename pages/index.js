@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import cookieCutter from "cookie-cutter"
 import { getUser } from '../server/middelwares/useUser'
 import { Navbar } from '../components/NavBar/Navbar'
 import Hero from '../components/Work/Hero'

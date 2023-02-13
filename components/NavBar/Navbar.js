@@ -26,8 +26,8 @@ export const Navbar = (props) => {
                         <GetBlackChild></GetBlackChild>
                     </div>
                     <div style={flex("row")}>
-                        <NavbarItem blank TO={"https://github.com/xxparthparekhxx"} TEXT={<img style={{ height: "1.2em" }} src='/github-mark-white.svg'></img>}></NavbarItem>
-                        <NavbarItem blank TO={"https://www.linkedin.com/in/xxparthparekhxx/"} TEXT={<img style={{ height: "1.2em", backgroundColor: "white" }} src='/linkedin.png'></img>}></NavbarItem>
+                        <NavbarItem blank TO={"https://github.com/xxparthparekhxx"} TEXT={<Image style={{ height: "1.2em" }} src='/github-mark-white.svg'></Image>}></NavbarItem>
+                        <NavbarItem blank TO={"https://www.linkedin.com/in/xxparthparekhxx/"} TEXT={<Image style={{ height: "1.2em", backgroundColor: "white" }} src='/linkedin.png'></Image>}></NavbarItem>
                     </div>
                 </nav>
             </div>
