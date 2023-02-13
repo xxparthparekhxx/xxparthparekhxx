@@ -1,6 +1,5 @@
 import React from 'react'
-import { flex } from '../../styles/flex'
-import Eye from '../eye/eye';
+
 
 import styles from "./styles.module.css";
 
@@ -16,7 +15,7 @@ const Hero = () => {
                     A Full-Stack Developer.
                 </span>
             </div>
-      
+
         </div >
     )
 }
