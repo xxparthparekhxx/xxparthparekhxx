@@ -1,18 +1,13 @@
 import React from 'react'
 import { flex } from '../../styles/flex'
-import useWindowDimensions from '../../utils/WindowDimensions.';
 import Eye from '../eye/eye';
-import styles  from  "./styles.module.css";
+
+import styles from "./styles.module.css";
 
 const Hero = () => {
-    
+
     return (
-        <div style={{
-                ...flex(  "row" ) ,
-                justifyContent:"center",
-                width:"100vw",
-                      
-        }}>
+        <div className={styles.herogrid}>
             <div className={styles.gradientText}>
 
                 Hi. I&apos;m Parth.
@@ -21,10 +16,8 @@ const Hero = () => {
                     A Full-Stack Developer.
                 </span>
             </div>
-            <div className={styles.eyebox}>
-                <Eye></Eye>
-            </div>
-        </div>
+      
+        </div >
     )
 }
 

@@ -19,7 +19,7 @@ export async function getServerSideProps(context) {
   // ...
   return { 
     props:{
-      name:"Lode"
+      // name:"Lode"
     }
   }
   
