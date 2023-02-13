@@ -3,10 +3,8 @@ import { Head } from '../header'
 import { flex } from '../../styles/flex'
 import { NavbarItem } from './Item'
 import { GetBlackChild } from "../eye/getBlackChield"
-import { useEyeContext } from '../../context/EyeContext'
 import Image from 'next/image'
 export const Navbar = (props) => {
-
     return (<Head>
 
         <header style={{
@@ -27,8 +25,8 @@ export const Navbar = (props) => {
                         <GetBlackChild></GetBlackChild>
                     </div>
                     <div style={flex("row")}>
-                        <NavbarItem blank TO={"https://github.com/xxparthparekhxx"} TEXT={<Image style={{ height: "1.2em" }} src='/github-mark-white.svg'></Image>}></NavbarItem>
-                        <NavbarItem blank TO={"https://www.linkedin.com/in/xxparthparekhxx/"} TEXT={<Image style={{ height: "1.2em", backgroundColor: "white" }} src='/linkedin.png'></Image>}></NavbarItem>
+                        <NavbarItem blank TO={"https://github.com/xxparthparekhxx"} TEXT={<Image alt={"Github Profile"} style={{ height: "1.2em" }} src='/github-mark-white.svg'></Image>}></NavbarItem>
+                        <NavbarItem blank TO={"https://www.linkedin.com/in/xxparthparekhxx/"} TEXT={<Image alt={"Linked in Profile"} style={{ height: "1.2em", backgroundColor: "white" }} src='/linkedin.png'></Image>}></NavbarItem>
                     </div>
                 </nav>
             </div>

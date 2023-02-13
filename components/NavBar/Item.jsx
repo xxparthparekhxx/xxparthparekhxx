@@ -21,7 +21,7 @@ export const NavbarItem = ({ TO, TEXT, blank }) => {
       }}
       onMouseLeave={(e) => {
         setBeingHovered(false);
-        eyec.dispatch({})
+        eyec.dispatch({});
       }}
       style={NavItemStyle}
     >
