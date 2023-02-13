@@ -4,6 +4,7 @@ import { flex } from '../../styles/flex'
 import { NavbarItem } from './Item'
 import { GetBlackChild } from "../eye/getBlackChield"
 import { useEyeContext } from '../../context/EyeContext'
+import Image from 'next/image'
 export const Navbar = (props) => {
 
     return (<Head>

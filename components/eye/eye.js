@@ -6,7 +6,7 @@ const Eye = ({ eyeRadius = 20, blackChild, Expanded }) => {
     useEffect(() => {
         const x = Expanded ? (eyeRadius * 0.7) : (eyeRadius * 0.5)
         setCorneaRadius(x)
-    }, [Expanded])
+    }, [Expanded,eyeRadius])
 
     const eyeRef = useRef(null);
 
