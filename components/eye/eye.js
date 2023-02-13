@@ -60,7 +60,7 @@ const Eye = ({ eyeRadius = 20, blackChild, Expanded }) => {
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
         };
-    }, []);
+    }, [eyeRadius]);
 
     const inflateCornea = () => {
         setCorneaRadius(eyeRadius * 0.7)
