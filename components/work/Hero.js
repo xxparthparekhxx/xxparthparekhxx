@@ -1,4 +1,5 @@
 import React from 'react'
+import { GradientBorder } from '../common/GradientBorder';
 
 
 import styles from "./styles.module.css";
@@ -15,6 +16,9 @@ const Hero = () => {
                     A Full-Stack Developer.
                 </span>
             </div>
+            <GradientBorder>
+            <img src="/parth.jpeg" className={styles.parthimg}  alt="" srcset="" />
+            </GradientBorder>
 
         </div >
     )

@@ -30,6 +30,17 @@
   flex-flow: row;
   justify-content: center;
 }
+.parthimg {
+  border-radius: 55%;
+  margin-top: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+
+  width: 23em;
+  height: 23em;
+  filter:grayscale(50);
+}
+
 
 @media screen and (max-width: 765px) {
   .herogrid {
@@ -41,9 +52,18 @@
   .gradientText {
     max-width: 80%;
   }
+  .parthimg{
+    width: 15em;
+    height: 15em;
+  }
 }
 @media screen and (max-width: 1200px) {
   .gradientText {
     font-size: 4em;
   }
+  .parthimg{
+    width: 15em;
+    height: 15em;
+  }
 }
+
