@@ -7,7 +7,7 @@
   ],
   "routes": [
     {
-      "src": "/backend/(.*)",
+      "src": "/(.*)",
       "dest": "vercel_app/wsgi.py"
     }
   ]
