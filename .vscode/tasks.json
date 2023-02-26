@@ -1,18 +1,31 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "Launch app", // Name of task
-        "type": "shell",
-        "command": "yarn dev", // Enter your command here
-        "group": "none",
-        "presentation": {
-          "reveal": "always",
-          "panel": "new"
-        },
-        "runOptions": {
-          "runOn": "folderOpen"
-        }
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Front", // Name of task
+      "type": "shell",
+      "command": "yarn dev", // Enter your command here
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
       }
-    ]
-  }
+    },
+    {
+      "label": "back", // Name of task
+      "type": "shell",
+      "command": "source env/Scripts/activate && cd backend && python manage.py runserver ", // Enter your command here
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}

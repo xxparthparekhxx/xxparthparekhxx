@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Head } from '../header'
 import { flex } from '../../styles/flex'
 import { NavbarItem } from './Item'
 import { GetBlackChild } from "../eye/getBlackChield"
 import Image from 'next/image'
-export const Navbar = (props) => {
+import { useLocation } from 'react-use'
+export const Navbar = ({ children, selected }) => {
+    const navbartitles = ["Work", "About", "Wip", "Contact"]
+
+    
     return (<Head>
 
         <header style={{
@@ -16,10 +20,11 @@ export const Navbar = (props) => {
                 <nav style={{ ...flex('row'), width: "100vw", justifyContent: "space-between", paddingLeft: "1.75em", paddingRight: "1.75em" }}>
 
                     <div style={{ ...flex("row") }}>
-                        <NavbarItem TEXT={"Work"} />
-                        <NavbarItem TEXT={"About"} />
-                        <NavbarItem TEXT={"Blog"} />
-                        <NavbarItem TEXT={"Contact"} />
+                        {navbartitles.map((e, i) =>
+                            <NavbarItem  key={e} TEXT={e}   />
+                        )
+
+                        }
                     </div>
                     <div style={{ padding: 10 }}>
                         <GetBlackChild></GetBlackChild>
@@ -38,7 +43,7 @@ export const Navbar = (props) => {
             height: "80vh",
             overflow: "scroll"
         }}>
-            {props.children}
+            {children}
         </div>
 
 

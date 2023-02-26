@@ -4,7 +4,7 @@ const Eye = ({ eyeRadius = 20, blackChild, Expanded }) => {
     const [targetPosition, setTargetPosition] = useState({ x: 0, y: 0 });
     const [corneaRadius, setCorneaRadius] = useState(eyeRadius * 0.7);
     useEffect(() => {
-        const x = Expanded ? (eyeRadius * 0.7) : (eyeRadius * 0.5)
+        const x = Expanded ? (eyeRadius * 0.7) : (eyeRadius * 0.6)
         setCorneaRadius(x)
     }, [Expanded,eyeRadius])
 

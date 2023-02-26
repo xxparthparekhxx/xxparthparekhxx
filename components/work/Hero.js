@@ -8,18 +8,19 @@ const Hero = () => {
 
     return (
         <div className={styles.herogrid}>
-            <div className={styles.gradientText}>
 
+
+            <div className={styles.gradientText}>
                 Hi. I&apos;m Parth.
                 <span style={{ display: "block" }}>
-
                     A Full-Stack Developer.
                 </span>
             </div>
-            <GradientBorder>
-            <img src="/parth.jpeg" className={styles.parthimg}  alt="" srcset="" />
-            </GradientBorder>
 
+
+            <GradientBorder>
+                <img src="/parth.jpeg" className={styles.parthimg} alt="" srcset="" />
+            </GradientBorder>
         </div >
     )
 }

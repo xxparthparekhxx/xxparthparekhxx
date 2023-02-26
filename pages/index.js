@@ -1,25 +1,35 @@
 import Head from 'next/head'
-import { getUser } from '../server/middelwares/useUser'
 import { Navbar } from '../components/NavBar/Navbar'
 import { Hero } from '../components/Work/Hero'
-export default function Home({ name }) {
+import ProjectGrid from '../components/project/Grid'
+
+export default function Home() {
   return (
-    <>
-      <Navbar>
-        <Hero />
-      </Navbar>
-    </>
+    <Navbar>
+      <Hero />
+      <p style={{
+        
+        display:"flex",
+        padding:"2em",
+        justifyContent:"center",
+        alignItems:"center",
+        width:"100%",
+        textAlign:"center",
+        fontSize:"200%",opacity:.6
+      }}>
+        <i>
+        "Fullstack Developer and AI Student at Georgian College with a Drive for Creating Cutting-Edge Applications"
+        </i>
+      </p>
+      <ProjectGrid></ProjectGrid>
+
+    </Navbar>
   )
 }
 
 export async function getServerSideProps(context) {
-  const user = getUser(context)
-  console.log(user)
-  // ...
   return {
     props: {
-      // name:"Lode"
     }
   }
-
 }
