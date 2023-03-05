@@ -4,7 +4,6 @@ import Eye from "./eye";
 export const GetBlackChild = () => {
   const eyeState = useEyeContext();
   const BlackChildReduser = (type: string) => {
-    console.log(type)
     switch (type) {
       case "work":
         return "👩‍💻";

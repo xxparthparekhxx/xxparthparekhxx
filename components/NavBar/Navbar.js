@@ -14,6 +14,8 @@ export const Navbar = ({ children, selected }) => {
         <header style={{
             position: 'fixed',
             display: "block",
+            backgroundColor:"black",
+            zIndex:1000,
         }}>
 
             <div >
@@ -37,10 +39,9 @@ export const Navbar = ({ children, selected }) => {
             </div>
 
         </header>
-        <div style={{ height: "80px" }}>
+        <div style={{ height: "100px" }}>
         </div>
         <div style={{
-            height: "80vh",
             overflow: "scroll"
         }}>
             {children}

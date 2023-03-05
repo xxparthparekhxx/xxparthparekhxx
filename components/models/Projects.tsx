@@ -1,0 +1,37 @@
+import React from "react";
+import { Project } from "../../src/models";
+import Stack from "./Stack";
+import styles from "./styles.module.css";
+
+interface ProjectCardProps {
+  project: Project;
+}
+
+// Define the project card component
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  console.log(project);
+  // Get the URL for the project's image
+  const imageUrl = project.medias.find((media) => media.is_image)?.img;
+
+  return (
+    <div className={`${styles.StackChipContainer} ${styles.Container}`} style={{ padding: 0 }}>
+      {imageUrl && <img src={imageUrl} className={styles.Image} />}
+      <div className={styles.Content}>
+        <h2 className={styles.Title}>{project.name}</h2>
+        {project.description && (
+          <p className={styles.StartDate}>{project.description.substring(0, 200)}...</p>
+        )}
+        {project.start_date && <p className={styles.StartDate}>{project.start_date}</p>}
+        {project.end_date && <p className={styles.EndDate}>{project.end_date}</p>}
+        {project.completed && <p className={styles.Completed}>Completed</p>}
+        <div className={styles.StackTiles}>
+          {project.stacks.map((stack) => (
+            <Stack key={stack.id} {...stack} selected={false} setStackSort={(e) => {}} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectCard;

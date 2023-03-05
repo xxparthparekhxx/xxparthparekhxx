@@ -1,0 +1,9 @@
+{
+  "access_token": "sl.BZmtVR6YQwHo8sIguhTSTqfsxf5i3LVtbz95l2RirFQkB_qOskkfzN-6Daxn29vH2Vn3vX8UfV40FXYQV5l8Dw15itTeFszcG0kGFn3LCWJwyBkzm6AZLZZ4Y85miOzw44u2PoBIJWhL",
+  "token_type": "bearer",
+  "expires_in": 14400,
+  "refresh_token": "sXJ6JP9cPlQAAAAAAAAAAQjKSdVksSXDFoLM38TTNC5CfIhPp2rMFoGMNbPq7tJM",
+  "scope": "account_info.read account_info.write contacts.read contacts.write file_requests.read file_requests.write files.content.read files.content.write files.metadata.read files.metadata.write sharing.read sharing.write",
+  "uid": "1574488657",
+  "account_id": "dbid:AABKeKhrS1-I9Tq07S85gQR2vHyKqYd_SGw"
+}
