@@ -6,7 +6,7 @@ import { GetBlackChild } from "../eye/getBlackChield"
 import Image from 'next/image'
 import { useLocation } from 'react-use'
 export const Navbar = ({ children }) => {
-    const navbartitles = ["Work", "About", "Wip", "Contact"]
+    const navbartitles = ["Work",  "Blog", "Contact"]
 
     
     return (<Head>

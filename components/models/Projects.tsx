@@ -17,11 +17,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   return (
     <div
+    
       onClick={() => {
         router.push(`/Work/${project.id}`)
       }}
       className={`${styles.StackChipContainer} ${styles.Container}`}
-      style={{ padding: 0 }}
+      style={{ padding: 0,cursor:"pointer"  }}
     >
       {imageUrl && (
         <img

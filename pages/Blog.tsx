@@ -1,10 +1,12 @@
 import React from 'react'
 import { Navbar } from '../components/NavBar/Navbar'
 
-const About = () => {
+const Blog = () => {
   return (
-    <Navbar></Navbar>
+    <Navbar>
+        
+    </Navbar>
     )
 }
 
-export default About
+export default Blog

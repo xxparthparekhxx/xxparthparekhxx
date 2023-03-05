@@ -96,13 +96,15 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
   )
 }
 
-export async function getServerSideProps(context:any) {
+export async function getStaticProps(context:any) {
   const [Stacks, allProjects] = await Promise.all([fetchStacks(), fetchProjects()])
 
   return {
     props: {
       stacks: Stacks,
       allProjects
-    }
+    },
+     revalidate: 10, // In seconds
+     
   }
 }
