@@ -45,7 +45,6 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
               src={medias[activeStep].video!}
               controls
               autoPlay
-              alt={medias[activeStep].description_for_alt}
               style={{
                 maxHeight: "700px",
               }}
