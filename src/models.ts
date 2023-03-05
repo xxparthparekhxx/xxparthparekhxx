@@ -19,6 +19,8 @@ export type Project = {
   start_date: string;
   end_date: string;
   description:string;
+  github_url:string;
+  hosted_url:string;
   completed: boolean;
   stacks: Stack[];
   medias: ProjectMedia[];

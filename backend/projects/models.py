@@ -24,8 +24,11 @@ class ProjectMedia(models.Model):
 class Project(models.Model):
     stacks = models.ManyToManyField(Stack)
     name = models.CharField(max_length=50)
-    description = models.TextField()
+    description = models.TextField(blank=True)
+    description_page_html = models.TextField(blank=True, default="")
     start_date = models.DateField()
+    github_url = models.CharField(max_length=200, blank=True)
+    hosted_url = models.CharField(max_length=200, blank=True)
     end_date = models.DateField(null=True)
     completed = models.BooleanField(default=False)
     medias = models.ManyToManyField(ProjectMedia)
@@ -43,3 +46,18 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Company(models.Model):
+    name = models.CharField(max_length=100)
+    logo = models.ImageField(blank=True)
+    main_url = models.TextField(blank=True)
+    stock_indicator = models.CharField(max_length=50)
+
+
+class certification(models.Model):
+    name = models.CharField(max_length=200)
+    company = models.ManyToManyField(Company, verbose_name="Creator Company")
+    verification_url = models.CharField(max_length=200, blank=True)
+    credential_id = models.CharField(max_length=200, blank=True)
+    display_image = models.ImageField(blank=True)

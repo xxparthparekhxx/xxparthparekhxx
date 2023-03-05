@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./styles.module.css";
 
 type StackProps = {
@@ -21,7 +22,7 @@ const Stack = ({ id, img, name, setStackSort, selected }: StackProps) => {
           : {}
       }
     >
-      <img  className={styles.StackImage} src={img} alt={name} />
+      <Image width={30} height={30} className={styles.StackImage} src={img} alt={name} />
       <div className={styles.StackName}>
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </div>
