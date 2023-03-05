@@ -21,7 +21,7 @@ const Stack = ({ id, img, name, setStackSort, selected }: StackProps) => {
           : {}
       }
     >
-      <img className={styles.StackImage} src={img} alt={name} />
+      <img  className={styles.StackImage} src={img} alt={name} />
       <div className={styles.StackName}>
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </div>

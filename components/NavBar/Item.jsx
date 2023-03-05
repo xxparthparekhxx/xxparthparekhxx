@@ -24,7 +24,7 @@ export const NavbarItem = ({ TO, TEXT, blank }) => {
         setBeingHovered(true);
       }
     }
-  }, [location, BeingHovered]);
+  }, [location, BeingHovered,TEXT]);
 
   const eyec = useEyeContext();
 

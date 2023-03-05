@@ -1,13 +1,14 @@
 import Head from 'next/head'
 import { Navbar } from '../components/NavBar/Navbar'
 import { Hero } from '../components/Work/Hero'
-import Stack from "../components/models/Stack"
+import StackView from "../components/models/Stack"
 import ProjectCard from "../components/models/Projects"
 
 import { fetchProjects, fetchProjectsByStack, fetchStacks } from "../src/api"
 import { useEffect, useState } from 'react'
-export default function Home({ stacks, allProjects }) {
-  const [SelectedStack, setSelectedStack] = useState(null)
+import { Project, Stack } from '../src/models'
+export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects:Project[]}) {
+  const [SelectedStack, setSelectedStack] = useState<number| null>(null)
   const [Projects, setProjects] = useState(allProjects)
 
   useEffect(() => {
@@ -61,7 +62,7 @@ export default function Home({ stacks, allProjects }) {
         }}>
 
           {
-            stacks.map(e => <Stack key={e.id} {...e} setStackSort={setSelectedStack} selected={e.id === SelectedStack}></Stack>)
+            stacks.map((e:Stack) => <StackView key={e.id} {...e} setStackSort={(e)=>setSelectedStack(e)} selected={e.id === SelectedStack}></StackView>)
           }
 
         </div>
@@ -71,7 +72,7 @@ export default function Home({ stacks, allProjects }) {
           My Projects
         </h2>
         {
-          Projects.map(e => <ProjectCard project={e}></ProjectCard>
+          Projects.map(e => <ProjectCard key={e.id} project={e}></ProjectCard>
           )
         }
       </div>
@@ -81,10 +82,8 @@ export default function Home({ stacks, allProjects }) {
   )
 }
 
-export async function getServerSideProps(context) {
-  const [Stacks,
-    allProjects] = await Promise.all([fetchStacks(),
-    fetchProjects()])
+export async function getServerSideProps(context:any) {
+  const [Stacks, allProjects] = await Promise.all([fetchStacks(), fetchProjects()])
 
   return {
     props: {

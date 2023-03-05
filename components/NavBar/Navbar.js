@@ -5,7 +5,7 @@ import { NavbarItem } from './Item'
 import { GetBlackChild } from "../eye/getBlackChield"
 import Image from 'next/image'
 import { useLocation } from 'react-use'
-export const Navbar = ({ children, selected }) => {
+export const Navbar = ({ children }) => {
     const navbartitles = ["Work", "About", "Wip", "Contact"]
 
     

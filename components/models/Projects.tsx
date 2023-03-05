@@ -11,11 +11,11 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   console.log(project);
   // Get the URL for the project's image
-  const imageUrl = project.medias.find((media) => media.is_image)?.img;
+  const imageUrl = project.medias.find((media) => media.is_image);
 
   return (
     <div className={`${styles.StackChipContainer} ${styles.Container}`} style={{ padding: 0 }}>
-      {imageUrl && <img src={imageUrl} className={styles.Image} />}
+      {imageUrl && <img src={imageUrl?.img ??'https://cdn.iconscout.com/icon/free/png-512/stackoverflow-2752065-2284882.png?f=avif&w=256'} className={styles.Image} alt={imageUrl.description_for_alt} />}
       <div className={styles.Content}>
         <h2 className={styles.Title}>{project.name}</h2>
         {project.description && (
