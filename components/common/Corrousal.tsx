@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { ProjectMedia } from "../../src/models";
 export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
   const [activeStep, setindex] = useState(0);
+  const buttonStyle = {
+    padding: "10px",
+    margin: "10px",
+  };
   return (
     <div
       style={{
@@ -34,12 +38,14 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
             <img
               style={{ borderRadius: 10, height: "700px" }}
               src={medias[activeStep].img!}
+              alt={medias[activeStep].description_for_alt}
             />
           ) : (
             <video
               src={medias[activeStep].video!}
               controls
               autoPlay
+              alt={medias[activeStep].description_for_alt}
               style={{
                 maxHeight: "700px",
               }}
@@ -63,18 +69,20 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
           }}
         >
           <button
+            style={buttonStyle}
             onClick={() => setindex(activeStep - 1)}
             disabled={activeStep === 0}
           >
-            {"<"}
+            {"< "}
             Back
           </button>
           <button
+            style={buttonStyle}
             onClick={() => setindex(activeStep + 1)}
             disabled={activeStep === medias.length - 1}
           >
             Next
-            {">"}
+            {" >"}
           </button>
         </div>
       </div>

@@ -22,6 +22,7 @@ export type Project = {
   github_url:string;
   hosted_url:string;
   completed: boolean;
+  description_page_html:string;
   stacks: Stack[];
   medias: ProjectMedia[];
 };

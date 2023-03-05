@@ -7,61 +7,112 @@ import { fetchProjectById, fetchProjects, fetchStacks } from "../../src/api";
 import { Project } from "../../src/models";
 import { Corrousal } from "../../components/common/Corrousal";
 const ProjectDescription = ({ project }: { project: Project }) => {
+  const buttonStyle = {
+    padding: "10px",
+    borderRadius: "4px",
+    boxShadow: "0px 0px 10px #ffc4ff",
+    border: "solid 1px",
+    margin: "4px 8px 4px 0px",
+  };
+ 
   return (
     <Navbar>
-      <div>
-        <div>
-          <div
-            style={{
-              margin: "10px",
-              border: "solid 1px white",
-              padding: "20px",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
-          >
-            <div>
-              <h2>{project.name}</h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div
+          style={{
+            padding: "20px",
+            width: "100%",
+            maxWidth: "1200px",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                margin: "10px",
+                border: "solid 1px",
+                padding: "20px",
+                boxShadow: "0px 0px 10px #ffc4ff",
+                flexWrap: "wrap",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
               <div>
-                {project.hosted_url && (
-                  <div>{<a href={project.hosted_url}> Visit </a>}</div>
-                )}
+                <h2 style={{ marginBottom: "5px" }}>{project.name}</h2>
+              </div>
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  {project.hosted_url && (
+                    <a style={buttonStyle} href={project.hosted_url}>
+                      {" "}
+                      Visit{" "}
+                    </a>
+                  )}
 
-                {project.github_url && (
-                  <div>
-                    {<a href={project.github_url}>View Github prepo</a>}
-                  </div>
-                )}
+                  {project.github_url && (
+                    <a style={buttonStyle} href={project.github_url}>
+                      View Github prepo
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
-            <div>
-              ({project.start_date} - {project.end_date})
+            <div style={{margin:"10px",padding:"10px"}}>
+              <Corrousal medias={project.medias}></Corrousal>
+            </div>
+
+            <h2
+              style={{
+                padding: "20px",
+              }}
+            >
+              Stack Used
+            </h2>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                // border: "solid 1px white",
+              }}
+            >
+              {project.stacks.map((stack) => (
+                <Stack
+                key={stack.id}
+                  {...stack}
+                  selected={false}
+                  setStackSort={() => {}}
+                ></Stack>
+              ))}
             </div>
           </div>
           <div>
-            <Corrousal medias={project.medias}></Corrousal>
+            <h2
+              style={{
+                padding: "20px",
+              }}
+            >
+              Description
+            </h2>
+            <p
+              dangerouslySetInnerHTML={{ __html: project.description_page_html }}
+              style={{
+                padding: "20px",
+              }}
+            ></p>
           </div>
-          <h2>Stack Used</h2>
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              // border: "solid 1px white",
-            }}
-          >
-            {project.stacks.map((stack) => (
-              <Stack
-                {...stack}
-                selected={false}
-                setStackSort={() => {}}
-              ></Stack>
-            ))}
-          </div>
-        </div>
-        <div>
-          <h2>Description</h2>
-          <p>{project.description}</p>
         </div>
       </div>
     </Navbar>

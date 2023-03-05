@@ -10,11 +10,14 @@ import { Project, Stack } from '../src/models'
 export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects:Project[]}) {
   const [SelectedStack, setSelectedStack] = useState<number| null>(null)
   const [Projects, setProjects] = useState(allProjects)
+  const [ProjectsLoading , setProjectsLoading ] = useState(false)
 
   useEffect(() => {
     const x = async () => {
       if (SelectedStack != null) {
+        setProjectsLoading(true)
         setProjects(await fetchProjectsByStack(SelectedStack))
+        setProjectsLoading(false)
       }
     }
     x()
@@ -74,6 +77,17 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
         {
           Projects.map(e => <ProjectCard key={e.id} project={e}></ProjectCard>
           )
+        }
+        {
+          ProjectsLoading && <div>
+            loading
+          </div>
+        }
+
+        {
+          (Projects.length == 0  && !ProjectsLoading ) && <div>
+            no Projects found on this stack I might have forgot to put in the data at the backend 
+          </div>
         }
       </div>
 
