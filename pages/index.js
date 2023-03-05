@@ -82,8 +82,9 @@ export default function Home({ stacks, allProjects }) {
 }
 
 export async function getServerSideProps(context) {
-  const Stacks = await fetchStacks()
-  const allProjects = await fetchProjects()
+  const [Stacks,
+    allProjects] = await Promise.all([fetchStacks(),
+    fetchProjects()])
 
   return {
     props: {
