@@ -74,10 +74,17 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
         }}>
           My Projects
         </h2>
+        <div style={{
+          display: 'flex',
+          flexDirection: "row",
+          justifyContent: "center",
+          flexWrap: "wrap",
+        }}>
         {
           Projects.map(e => <ProjectCard key={e.id} project={e}></ProjectCard>
           )
         }
+        </div>
         {
           ProjectsLoading && <div>
             loading
