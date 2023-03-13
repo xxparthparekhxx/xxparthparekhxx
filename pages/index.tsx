@@ -111,7 +111,7 @@ export async function getStaticProps(context:any) {
       stacks: Stacks,
       allProjects
     },
-     revalidate: 10, // In seconds
+     revalidate: 1, // In seconds
      
   }
 }
