@@ -3,19 +3,21 @@ import { Head } from '../header'
 import { flex } from '../../styles/flex'
 import { NavbarItem } from './Item'
 import { GetBlackChild } from "../eye/getBlackChield"
-import Image from 'next/image'
-import { useLocation } from 'react-use'
+import { DefaultSeo } from 'next-seo'
+import SEO from "../../next-seo.config"
 export const Navbar = ({ children }) => {
-    const navbartitles = ["Work",  "Blog", "Contact"]
+    const navbartitles = ["Work", "Blog", "Contact"]
 
-    
-    return (<Head>
+
+    return (
+
+    <Head>
 
         <header style={{
             position: 'fixed',
             display: "block",
-            backgroundColor:"black",
-            zIndex:1000,
+            backgroundColor: "black",
+            zIndex: 1000,
         }}>
 
             <div >
@@ -23,7 +25,7 @@ export const Navbar = ({ children }) => {
 
                     <div style={{ ...flex("row") }}>
                         {navbartitles.map((e, i) =>
-                            <NavbarItem  key={e} TEXT={e}   />
+                            <NavbarItem key={e} TEXT={e} />
                         )
 
                         }
@@ -48,5 +50,7 @@ export const Navbar = ({ children }) => {
         </div>
 
 
-    </Head>)
+    </Head>
+    
+    )
 }
