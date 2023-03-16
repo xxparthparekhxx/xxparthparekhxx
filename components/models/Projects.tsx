@@ -22,7 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         router.push(`/Work/${project.id}`)
       }}
       className={`${styles.StackChipContainer} ${styles.Container}`}
-      style={{ padding: 0,cursor:"pointer" ,marginTop:"50px" }}
+      style={{ padding: 0,cursor:"pointer" ,marginTop:"50px" ,marginRight:"30px"}}
     >
       {imageUrl && (
         <img
