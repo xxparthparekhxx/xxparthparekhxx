@@ -1,5 +1,5 @@
 import Link from "next/link";
-import react, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-use";
 import { useEyeContext } from "../../context/EyeContext";
 
@@ -14,7 +14,7 @@ export const NavbarItem = ({ TO, TEXT, blank }) => {
   useEffect(() => {
     if (typeof TEXT == typeof "") {
       const endpoint = location.href.includes(TEXT);
-      console.log(endpoint);
+      // console.log(endpoint);
       if (
         endpoint ||
         (TEXT == "Work" &&
