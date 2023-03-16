@@ -37,7 +37,9 @@ const ProjectDescription = ({ project }: { project: Project }) => {
                 margin: "10px",
                 border: "solid 1px",
                 padding: "20px",
-                boxShadow: "0px 0px 10px #ffc4ff",
+                
+                boxShadow: "0px 0px 5px #ffc4ff",
+                transition: "box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
                 flexWrap: "wrap",
                 display: "flex",
                 flexDirection: "row",

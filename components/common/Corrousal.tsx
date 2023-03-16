@@ -5,6 +5,10 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
   const buttonStyle = {
     padding: "10px",
     margin: "10px",
+    color:"white",
+    backgroundColor:"black",
+    boxShadow: "0px 0px 5px #ffc4ff",
+    transition: "box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
   };
   return (
     <div

@@ -44,7 +44,7 @@ export const Navbar = ({ children }) => {
         <div style={{ height: "100px" }}>
         </div>
         <div style={{
-            overflow: "scroll"
+            // overflow: "scroll"
         }}>
             {children}
         </div>
