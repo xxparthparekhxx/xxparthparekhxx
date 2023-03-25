@@ -33,16 +33,18 @@ SECRET_KEY = 'django-insecure-*l!zkvtuxc&-g6f8$9x6-=m*xkbmvj!s_v#e@pn^dzm#4w%tjz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["xxparthparerkhxx-backend.vercel.app",
-                 "xxparthparekhxx.vercel.app", "127.0.0.1", "localhost" ]
+ALLOWED_HOSTS = ["xxparthparekhxx-backend.vercel.app",
+                 "xxparthparekhxx.vercel.app", "127.0.0.1", "localhost", "192.168.180.119"]
 
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',"https://xxparthparekhxx.vercel.app"
+    'http://localhost:3000', "https://xxparthparekhxx.vercel.app"
 )
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
+    "jazzmin",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -105,11 +107,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': "containers-us-west-34.railway.app",
-        'PORT': "7531",
+        'HOST': "hathee.chtuownbhci4.us-east-1.rds.amazonaws.com",
+        'PORT': "5432",
         'USER': "postgres",
-        "NAME": "postgres",
-        'PASSWORD': "0yvUUW3LxfP4IOlGTzrR",
+        "NAME": "hathee",
+        'PASSWORD': "Parthparekh007_!",
         'DISABLE_SERVER_SIDE_CURSORS': True,
 
     }

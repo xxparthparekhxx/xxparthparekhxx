@@ -1,4 +1,4 @@
-const API_URL = "https://xxparthparerkhxx-backend.vercel.app/project/";
+const API_URL = "https://xxparthparekhxx-backend.vercel.app/project/";
 
 import { Post, Project, ProjectMedia, Stack } from "./models";
 
