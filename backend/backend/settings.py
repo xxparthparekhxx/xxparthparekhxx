@@ -34,9 +34,9 @@ SECRET_KEY = 'django-insecure-*l!zkvtuxc&-g6f8$9x6-=m*xkbmvj!s_v#e@pn^dzm#4w%tjz
 DEBUG = True
 
 ALLOWED_HOSTS = ["xxparthparekhxx-backend.vercel.app",
-                 "xxparthparekhxx.vercel.app", "127.0.0.1", "localhost", "192.168.180.119"]
+                 "xxparthparekhxx.vercel.app", "127.0.0.1", "localhost", "192.168.124.119","*"]
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000', "https://xxparthparekhxx.vercel.app"

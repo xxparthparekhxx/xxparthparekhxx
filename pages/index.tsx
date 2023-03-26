@@ -103,7 +103,7 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
   )
 }
 
-export async function getStaticProps(context:any) {
+export async function getServerSideProps(context:any) {
   const [Stacks, allProjects] = await Promise.all([fetchStacks(), fetchProjects()])
 
   return {
