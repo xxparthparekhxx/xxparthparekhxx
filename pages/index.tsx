@@ -3,11 +3,12 @@ import { Navbar } from '../components/NavBar/Navbar'
 import { Hero } from '../components/Work/Hero'
 import StackView from "../components/models/Stack"
 import ProjectCard from "../components/models/Projects"
-
 import { fetchProjects, fetchProjectsByStack, fetchStacks } from "../src/api"
 import { useEffect, useState } from 'react'
 import { Project, Stack } from '../src/models'
+import { LeftRight } from '../components/eye/CurveFunctions'
 export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects:Project[]}) {
+
   const [SelectedStack, setSelectedStack] = useState<number| null>(null)
   const [Projects, setProjects] = useState(allProjects)
   const [ProjectsLoading , setProjectsLoading ] = useState(false)
@@ -16,6 +17,7 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
     const x = async () => {
       if (SelectedStack != null) {
         setProjectsLoading(true)
+        setProjects([])
         setProjects(await fetchProjectsByStack(SelectedStack))
         setProjectsLoading(false)
       }
@@ -55,7 +57,7 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
         <h2 style={{
           marginBottom: "1em"
         }}>
-          My Stack
+          Tech I Work With
         </h2>
         <div style={{
           display: 'flex',
@@ -79,6 +81,7 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
           flexDirection: "row",
           justifyContent: "center",
           flexWrap: "wrap",
+          flexBasis:'center',
         }}>
         {
           Projects.map(e => <ProjectCard key={e.id} project={e}></ProjectCard>
@@ -87,7 +90,7 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
         </div>
         {
           ProjectsLoading && <div>
-            loading
+            <LeftRight></LeftRight>
           </div>
         }
 
