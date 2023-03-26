@@ -110,8 +110,6 @@ export async function getServerSideProps(context:any) {
     props: {
       stacks: Stacks,
       allProjects
-    },
-     revalidate: 1, // In seconds
-     
+    }
   }
 }

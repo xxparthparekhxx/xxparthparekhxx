@@ -34,8 +34,8 @@ export const fetchProjectMediaById = async (
 
 // Fetch all projects
 export const fetchProjects = async (): Promise<Project[]> => {
-  const response = await fetch(API_URL + "projects/");
-  console.log(await response.body?.getReader().read());
+  const response = await fetch(API_URL + "projects/")
+  console.log(response)
   const projects = await response.json();
   return projects;
 };
