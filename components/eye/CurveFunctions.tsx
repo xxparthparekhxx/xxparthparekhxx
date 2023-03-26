@@ -8,7 +8,7 @@ export const LeftRight = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setRotation((prevRotation) => {
+      setRotation(prevRotation => {
         if (prevRotation >= 45) {
           setDirection(-1);
         } else if (prevRotation <= -45) {
