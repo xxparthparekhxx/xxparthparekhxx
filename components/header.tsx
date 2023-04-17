@@ -1,6 +1,6 @@
 import NEXTHead from "next/head"
 
-export const Head = (props) => {
+export const Head = (props:{children?:React.ReactNode[]}) => {
     return <div>
     <NEXTHead>
         <title>xxparthparekhxx</title>
