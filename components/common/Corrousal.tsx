@@ -64,13 +64,12 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
         >
           <button
             style={
-              activeStep === 0!
-                ? buttonStyle
-                : {
-                    ...buttonStyle,
+              activeStep === 0
+                ? 
+                {
                     color: "black",
-                    boxShadow: "0px 0px 1px #ffc4ff",
-                  }
+                    visibility:"hidden",
+                  }:buttonStyle
             }
             onClick={() => setindex(activeStep - 1)}
             disabled={activeStep === 0}
@@ -80,13 +79,13 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
           </button>
           <button
             style={
-              activeStep === medias.length - 1!
-                ? buttonStyle
-                : {
-                    ...buttonStyle,
+              activeStep === medias.length - 1
+                ? 
+                {
                     color: "black",
-                    boxShadow: "0px 0px 1px #ffc4ff",
-                  }
+                    visibility:"hidden",
+                   
+                  }:buttonStyle
             }
             onClick={() => setindex(activeStep + 1)}
             disabled={activeStep === medias.length - 1}
