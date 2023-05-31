@@ -18,6 +18,7 @@ export const Navbar = ({ children }) => {
             display: "block",
             backgroundColor: "black",
             zIndex: 1000,
+            
         }}>
 
             <div >

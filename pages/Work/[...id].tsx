@@ -9,7 +9,7 @@ import { Corrousal } from "../../components/common/Corrousal";
 const ProjectDescription = ({ project }: { project: Project }) => {
   const buttonStyle = {
     padding: "10px",
-    borderRadius: "4px",
+    borderRadius: "20px",
     boxShadow: "0px 0px 10px #ffc4ff",
     border: "solid 1px",
     margin: "4px 8px 4px 0px",
@@ -35,8 +35,9 @@ const ProjectDescription = ({ project }: { project: Project }) => {
           <div>
             <div
               style={{
-                margin: "10px",
+                margin: "15px",
                 border: "solid 1px 0px 1px 0px",
+                borderRadius: "20px" ,
                 padding: "20px",
                 boxShadow: "0px 0px 5px #ffc4ff",
                 transition: "box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
