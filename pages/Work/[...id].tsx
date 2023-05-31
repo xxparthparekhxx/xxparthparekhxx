@@ -13,6 +13,7 @@ const ProjectDescription = ({ project }: { project: Project }) => {
     boxShadow: "0px 0px 10px #ffc4ff",
     border: "solid 1px",
     margin: "4px 8px 4px 0px",
+    backgroundColor:'black',
   };
  
   return (
@@ -43,6 +44,7 @@ const ProjectDescription = ({ project }: { project: Project }) => {
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "space-between",
+                backgroundColor:'black',
               }}
             >
               <div>
@@ -121,7 +123,6 @@ const ProjectDescription = ({ project }: { project: Project }) => {
 };
 
 export async function getServerSideProps({ params }: any) {
-  console.log(params);
   const project = await fetchProjectById(Number(params.id));
   return {
     props: {

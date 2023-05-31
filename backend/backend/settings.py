@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     "projects",
+    "authservice",
     'storages',
 ]
 access_code = "FRteMFDzqUkAAAAAAAAAEesSTlUSKPOoj-6QAlSJCD0"
