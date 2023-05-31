@@ -5,9 +5,9 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
   const buttonStyle = {
     padding: "10px",
     margin: "10px",
-    color:"white",
-    backgroundColor:"black",
-    boxShadow: "0px 0px 5px #ffc4ff",
+    color: "white",
+    backgroundColor: "black",
+    boxShadow: "0px 0px 7px #ffc4ff",
     transition: "box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
   };
   return (
@@ -62,15 +62,6 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
             alignItems: "center",
           }}
         >
-          {`${activeStep + 1} of ${medias.length}`}
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
           <button
             style={buttonStyle}
             onClick={() => setindex(activeStep - 1)}
@@ -80,7 +71,15 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
             Back
           </button>
           <button
-            style={buttonStyle}
+            style={
+              activeStep === medias.length - 1
+                ? buttonStyle
+                : {
+                    ...buttonStyle,
+                    color: "black",
+                    boxShadow: "0px 0px 1px #ffc4ff",
+                  }
+            }
             onClick={() => setindex(activeStep + 1)}
             disabled={activeStep === medias.length - 1}
           >

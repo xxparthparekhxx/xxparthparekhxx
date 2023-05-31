@@ -9,7 +9,7 @@ import { Corrousal } from "../../components/common/Corrousal";
 const ProjectDescription = ({ project }: { project: Project }) => {
   const buttonStyle = {
     padding: "10px",
-    borderRadius: "20px",
+    borderRadius: "5px",
     boxShadow: "0px 0px 10px #ffc4ff",
     border: "solid 1px",
     margin: "4px 8px 4px 0px",
