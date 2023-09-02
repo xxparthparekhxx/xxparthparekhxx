@@ -53,7 +53,7 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
         }}>
 
           {
-            stacks.map((e:Stack) => <StackView key={e.id} {...e} setStackSort={(e)=>setSelectedStack(e)} selected={e.id === SelectedStack}></StackView>)
+            stacks.map((e:Stack) => <StackView iconOnly={false} key={e.id} {...e} setStackSort={(e)=>setSelectedStack(e)} selected={e.id === SelectedStack}></StackView>)
           }
 
         </div>

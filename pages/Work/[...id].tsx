@@ -94,6 +94,7 @@ const ProjectDescription = ({ project }: { project: Project }) => {
             >
               {project.stacks.map((stack) => (
                 <Stack
+                iconOnly={false}
                 key={stack.id}
                   {...stack}
                   selected={false}

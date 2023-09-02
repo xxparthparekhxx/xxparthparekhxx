@@ -76,6 +76,7 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
           </button>
           {medias.map((e, i) => (
             <div
+            key={i}
               style={{
                 display: "flex",
                 justifyContent: "center",
