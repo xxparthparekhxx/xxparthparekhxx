@@ -31,21 +31,7 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
   return (
     <Navbar>
       <Hero />
-      <p style={{
-
-        display: "flex",
-        padding: "2em",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        textAlign: "center",
-        fontSize: "200%", opacity: .6
-      }}>
-        <i>
-          &quot; Fullstack Developer and AI Student at Georgian College with a Drive for Creating Cutting-Edge Applications &quot;
-        </i>
-
-      </p>
+  
       <div style={{
         padding: "2em",
         justifyContent: "center",
@@ -96,8 +82,8 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
 
         {
           (Projects.length == 0  && !ProjectsLoading ) && <div>
-            no Projects found on this stack I might have forgot to put in the data at the backend 
-          </div>
+            No Projects Found
+            </div>
         }
       </div>
 

@@ -19,7 +19,7 @@ const Hero = () => {
 
 
             <GradientBorder>
-                <img src="/parth.jpeg" className={styles.parthimg} alt="" srcset="" />
+                <img src="/parth.png" className={styles.parthimg} alt="" srcset="" />
             </GradientBorder>
         </div >
     )

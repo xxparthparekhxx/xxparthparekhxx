@@ -27,33 +27,38 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       {imageUrl && (
         <img
           src={
+            // "https://pendulum-it.com/wp-content/uploads/2020/05/Google-Cloud-Platform-GCP-logo.png"
+
             imageUrl?.img ??
+            
             "https://cdn.iconscout.com/icon/free/png-512/stackoverflow-2752065-2284882.png?f=avif&w=256"
           }
           className={styles.Image}
           alt={imageUrl.description_for_alt}
         />
       )}
-      <div className={styles.Content}>
-        <h2 className={styles.Title}>{project.name}</h2>
+      <div className={styles.Content}>       
+
+        <h2 className={styles.Title}>{project.name}
+        {project.completed && <i className={styles.Completed}>Completed</i>}
+        </h2>
         {project.description && (
           <p className={styles.StartDate}>
-            {project.description.substring(0, 200)}...
+            {project.description.substring(0, 150)}...
           </p>
         )}
-        {project.start_date && (
-          <p className={styles.StartDate}>{project.start_date}</p>
+        { (
+          <p className={styles.StartDate}>
+           {project.start_date && project.start_date} - {project.end_date && project.end_date}
+            </p>
         )}
-        {project.end_date && (
-          <p className={styles.EndDate}>{project.end_date}</p>
-        )}
-        {project.completed && <p className={styles.Completed}>Completed</p>}
         <div className={styles.StackTiles}>
-          {project.stacks.map((stack) => (
+          {project.stacks.map((stack,i) => i < 4 &&(
             <Stack
               key={stack.id}
               {...stack}
               selected={false}
+              iconOnly={true}
               setStackSort={(e) => {}}
             />
           ))}

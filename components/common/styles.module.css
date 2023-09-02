@@ -1,12 +1,12 @@
 .gradientBorder {
   /* border: double 1em transparent; */
-  border-radius: 50%;
+  border-radius: 4px;
   background-image: linear-gradient(
     271deg,
-    #a0e9ff 30%,
-    #a162e8 50%,
-    #f093b0 70%,
-    #edca85 94%
+    #0d0208 30%,
+    #003b00 50%,
+    #008f11 70%,
+    #00ff41 94%
   );
   height:max-content;
   background-origin: border-box;

@@ -7,9 +7,10 @@ type StackProps = {
   name: string;
   selected: boolean;
   setStackSort: (id: number) => any;
+  iconOnly: boolean | undefined
 };
 
-const Stack = ({ id, img, name, setStackSort, selected }: StackProps) => {
+const Stack = ({ id, img, name, setStackSort, selected,iconOnly=false }: StackProps) => {
   return (
     <div
       onClick={() => setStackSort(id)}
@@ -23,9 +24,9 @@ const Stack = ({ id, img, name, setStackSort, selected }: StackProps) => {
       }
     >
       <img  className={styles.StackImage} src={img} alt={name} />
-      <div className={styles.StackName}>
+      {!iconOnly? <div className={styles.StackName}>
         {name.charAt(0).toUpperCase() + name.slice(1)}
-      </div>
+      </div>:<></>}
     </div>
   );
 };

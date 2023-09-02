@@ -12,6 +12,7 @@ class Stack(models.Model):
 
 
 class ProjectMedia(models.Model):
+    is_logo = models.BooleanField()
     is_image = models.BooleanField()
     img = models.ImageField(blank=True)
     video = models.FileField(upload_to='videos_uploaded', blank=True)

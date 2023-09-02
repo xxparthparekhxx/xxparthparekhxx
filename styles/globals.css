@@ -44,7 +44,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  font-family: Bogart, Recoleta, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'Space Mono', monospace;
 
   background: linear-gradient(
       to bottom,
