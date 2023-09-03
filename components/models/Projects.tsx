@@ -13,7 +13,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const router = useRouter()
   console.log(project);
   // Get the URL for the project's image
-  const imageUrl = project.medias.find((media) => media.is_image);
+  const imageUrl = project.medias.find((media) => media.is_logo);
 
   return (
     <div

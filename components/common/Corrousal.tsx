@@ -85,6 +85,7 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
             >
               {medias[activeStep].is_image ? (
                 <img
+                onClick={()=>setindex(i)}
                   style={{
                     borderRadius: 10,
                     height: "100px",
@@ -100,14 +101,8 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
                   alt={e.description_for_alt}
                 />
               ) : (
-                <video
-                  src={medias[activeStep].video!}
-                  controls
-                  autoPlay
-                  style={{
-                    maxHeight: "700px",
-                  }}
-                ></video>
+               <>
+               </>
               )}
             </div>
           ))}

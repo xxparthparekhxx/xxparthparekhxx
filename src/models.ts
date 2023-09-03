@@ -8,6 +8,7 @@ export type Stack = {
 export type ProjectMedia = {
   id: number;
   is_image: boolean;
+  is_logo: boolean;
   img: string | null;
   video: string | null;
   description_for_alt: string;
