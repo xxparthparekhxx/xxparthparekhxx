@@ -78,8 +78,8 @@ const Blog = ({ posts }: { posts: Post[] }) => {
   console.log("posts",posts);
   return (
     <Navbar>
-      {posts.map((post) => (
-        <BlogTile {...post}></BlogTile>
+      {posts.map((post,I) => (
+        <BlogTile key={I} {...post}></BlogTile>
       ))}
     </Navbar>
   );
