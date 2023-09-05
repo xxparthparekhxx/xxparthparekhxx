@@ -40,6 +40,7 @@ class Project(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
+    metadata = models.TextField()
     content = models.TextField()
     Media = models.ManyToManyField(ProjectMedia, verbose_name=("PostMedia"))
     date_posted = models.DateTimeField(auto_now_add=True)
@@ -48,6 +49,13 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+
+class Contact(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=254)
+    reason = models.TextField()
+    date_posted = models.DateTimeField(auto_now_add=True)
+    
 
 class Company(models.Model):
     name = models.CharField(max_length=100)

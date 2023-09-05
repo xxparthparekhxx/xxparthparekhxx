@@ -1,6 +1,6 @@
 const API_URL = "https://xxparthparekhxx-backend.vercel.app/project/";
 
-import { Post, Project, ProjectMedia, Stack } from "./models";
+import { Contact, ContactInput, Post, Project, ProjectMedia, Stack } from "./models";
 
 // Fetch all stacks
 export const fetchStacks = async (): Promise<Stack[]> => {
@@ -68,3 +68,22 @@ export async function fetchProjectsByStack(
   const data = await response.json();
   return data as Project[];
 }
+
+
+
+export const createContact = async (contact: ContactInput): Promise<Contact> => {
+  const response = await fetch(API_URL + "contact/create/", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(contact)
+  });
+
+  if (!response.ok) {
+    throw new Error("Error creating contact");
+  }
+
+  const createdContact = await response.json();
+  return createdContact;
+};

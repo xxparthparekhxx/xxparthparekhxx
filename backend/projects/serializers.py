@@ -1,7 +1,7 @@
 # serializers.py
 
 from rest_framework import serializers
-from .models import Stack, ProjectMedia, Project, Post
+from .models import Stack, ProjectMedia, Project, Post,Contact
 
 
 class StackSerializer(serializers.ModelSerializer):
@@ -9,6 +9,11 @@ class StackSerializer(serializers.ModelSerializer):
         model = Stack
         fields = '__all__'
 
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = '__all__'
 
 class ProjectMediaSerializer(serializers.ModelSerializer):
     class Meta:

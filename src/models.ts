@@ -19,11 +19,11 @@ export type Project = {
   name: string;
   start_date: string;
   end_date: string;
-  description:string;
-  github_url:string;
-  hosted_url:string;
+  description: string;
+  github_url: string;
+  hosted_url: string;
   completed: boolean;
-  description_page_html:string;
+  description_page_html: string;
   stacks: Stack[];
   medias: ProjectMedia[];
 };
@@ -32,7 +32,34 @@ export type Post = {
   id: number;
   title: string;
   content: string;
-  media: ProjectMedia[];
+  Media: ProjectMedia[];
   date_posted: string;
   categories: Stack[];
+};
+
+export type Contact = {
+  id?: number; // Assuming the model has an auto-generated ID
+  name: string;
+  email: string;
+  reason: string;
+  date_posted: Date;
+};
+
+export type ContactInput = {
+  name: string;
+  email: string;
+  reason: string;
+  // Notice we're not including date_posted here since it's auto_now_add in your Django model
+};
+
+export const ContactInputFactory = (
+  name: string,
+  email: string,
+  reason: string
+) => {
+  return {
+    name,
+    email,
+    reason,
+  } as ContactInput;
 };
