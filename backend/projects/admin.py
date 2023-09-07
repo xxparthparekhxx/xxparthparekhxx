@@ -5,3 +5,4 @@ admin.site.register(Project);
 admin.site.register(ProjectMedia);
 admin.site.register(Stack);
 admin.site.register(Post);
+admin.site.register(Contact);

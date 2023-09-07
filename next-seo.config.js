@@ -1,6 +1,6 @@
 export default {
     title: "Parth Parekh",
-    description: "Fullstack Developer and AI Student at Georgian College with a Drive for Creating Cutting-Edge Applications",
+    description: "Fullstack Developer ",
     openGraph: {
         type: 'website',
         locale: 'en_IE',
