@@ -8,7 +8,7 @@ export default {
         siteName: 'xxparthparekhxx',
         images: [
             {
-                url: 'https://xxparthparekhxx.vercel.app/parth.jpeg',
+                url: 'https://xxparthparekhxx.vercel.app/parth.png',
                 width: 553,
                 height: 553,
                 alt: 'Profile Photo',
