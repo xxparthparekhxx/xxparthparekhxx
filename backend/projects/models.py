@@ -55,7 +55,8 @@ class Contact(models.Model):
     email = models.EmailField(max_length=254)
     reason = models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
-    
+    def __str__(self):
+        return f"{self.email} {self.date_posted}"
 
 class Company(models.Model):
     name = models.CharField(max_length=100)
