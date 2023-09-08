@@ -54,7 +54,7 @@ const Eye: React.FC<EyeProps> = ({ eyeRadius = 20, blackChild, Expanded, CurveFu
         position: 'absolute',
         left: `${corneaPosition.x}px`,
         top: `${corneaPosition.y}px`,
-        transform: `rotate(${corneaPosition.rotation}deg)`
+        transform: `rotate(${corneaPosition.rotation}deg)`,
     };
 
     useEffect(() => {

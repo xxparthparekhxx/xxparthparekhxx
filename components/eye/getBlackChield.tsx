@@ -3,7 +3,7 @@ import { useEyeContext } from "../../context/EyeContext";
 import Eye from "./eye";
 export const GetBlackChild = () => {
   const eyeState = useEyeContext();
-  const BlackChildReduser = (type: string) => {
+  const BlackChildReduser = (type: string,customemoji?:string) => {
     switch (type) {
       case "work":
         return "👩‍💻";
@@ -13,6 +13,8 @@ export const GetBlackChild = () => {
         return "📰";
       case "contact":
         return "📞";
+      case "custom":
+        return customemoji;      
       default:
         return "";
     }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
+import FocusOnMouseEnter from "../eye/FocusOnMouseEnter";
 
 type StackProps = {
   id: number;
@@ -12,13 +13,14 @@ type StackProps = {
 
 const Stack = ({ id, img, name, setStackSort, selected,iconOnly=false }: StackProps) => {
   return (
+    <FocusOnMouseEnter>
     <div
       onClick={() => setStackSort(id)}
       className={styles.StackChipContainer}
       style={
         selected
           ? {
-              boxShadow: "0px 0px 20px #ffc4ff",
+              boxShadow: "0px 0px 20px #00ff41",
             }
           : {}
       }
@@ -28,6 +30,7 @@ const Stack = ({ id, img, name, setStackSort, selected,iconOnly=false }: StackPr
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </div>:<></>}
     </div>
+    </FocusOnMouseEnter>
   );
 };
 

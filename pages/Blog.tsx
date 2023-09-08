@@ -3,6 +3,9 @@ import { Navbar } from "../components/NavBar/Navbar";
 import { fetchPosts } from "../src/api";
 import { Post } from "../src/models";
 import { useRouter } from "next/router";
+import { GradientBorder } from "../components/common/GradientBorder";
+import Hoverborder from "../components/common/Hoverborder";
+import FocusOnMouseEnter from "../components/eye/FocusOnMouseEnter";
 
 export const BlogTile = (blog: Post) => {
   console.log(blog.Media)
@@ -11,18 +14,21 @@ export const BlogTile = (blog: Post) => {
 
 
   return (
+  <div style={{margin:"20px"}}>
+<FocusOnMouseEnter>
+
+  <Hoverborder>
+
     <div
       onClick={(e) => {
         router.push("Blog/"+blog.id)
       }}
       style={{
-        border: "solid 1px white",
         padding: "10px",
         cursor: "pointer",
         margin: "20px",
         borderRadius: "10px",
-      }}
-    >
+      }}>
       <div
         style={{
           display: "flex",
@@ -71,6 +77,11 @@ export const BlogTile = (blog: Post) => {
         </div>
       </div>
     </div>
+  </Hoverborder>
+</FocusOnMouseEnter>
+  
+  </div>
+
   );
 };
 
