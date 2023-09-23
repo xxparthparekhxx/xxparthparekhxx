@@ -32,6 +32,7 @@ export type Post = {
   id: number;
   title: string;
   content: string;
+  metadata:string; 
   Media: ProjectMedia[];
   date_posted: string;
   categories: Stack[];

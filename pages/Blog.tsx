@@ -11,7 +11,15 @@ export const BlogTile = (blog: Post) => {
   console.log(blog.Media)
   const imageUrl = blog.Media.find((media) => media.is_logo);
   const router = useRouter()
-
+  function formatDateAndTime(date: Date): string {
+    const dd = String(date.getDate()).padStart(2, '0');
+    const mm = String(date.getMonth() + 1).padStart(2, '0'); // January is 0
+    const yy = String(date.getFullYear()).slice(-2);
+    const hh = String(date.getHours()).padStart(2, '0');
+    const min = String(date.getMinutes()).padStart(2, '0');
+  
+    return `${dd} ${mm} ${yy}" ${hh}:${min}`;
+  }
 
   return (
   <div style={{margin:"20px"}}>
@@ -69,10 +77,10 @@ export const BlogTile = (blog: Post) => {
             }}
           >
             <h3>{blog.title}</h3>
-            <div>{blog.date_posted}</div>
+            <div>{formatDateAndTime(new Date(blog.date_posted) )}</div>
           </div>
           <div style={{ marginTop: "10px" }}>
-        {blog.content}
+        {blog.metadata}
           </div>
         </div>
       </div>

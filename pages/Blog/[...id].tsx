@@ -72,7 +72,7 @@ const Blog = ({ project }: { project: Post }) => {
                     flexWrap: "wrap",
                   }}
                 >
-                  <a style={buttonStyle}>Sharre</a>
+                  <a style={buttonStyle}>Share</a>
                 </div>
               </div>
             </div>
