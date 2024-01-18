@@ -1,6 +1,4 @@
-<p align="center">
-<img src="https://github.com/xxparthparekhxx/xxparthparekhxx/assets/73629899/6ec48251-bd75-4ff3-919a-080daa8428ac" />
-</p>
+ 
 
 
 
