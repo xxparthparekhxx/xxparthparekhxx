@@ -112,8 +112,8 @@ const Blog = ({ post }: { post: Post }) => {
             />
           </div>
           <div>
-            <div style={{ margin: "20px" }}>
-              <Markdown>{post.content}</Markdown>
+            <div style={{ margin: "20px", overflow:"scroll"}}>
+              <Markdown >{post.content}</Markdown>
             </div>
           </div>
         </div>
