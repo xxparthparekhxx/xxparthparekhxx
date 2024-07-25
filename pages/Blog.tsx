@@ -32,6 +32,7 @@ export const BlogTile = (blog: Post) => {
         router.push("Blog/"+blog.id)
       }}
       style={{
+
         padding: "10px",
         cursor: "pointer",
         margin: "20px",
@@ -41,6 +42,7 @@ export const BlogTile = (blog: Post) => {
         style={{
           display: "flex",
           flexFlow: "row",
+          
         }}
       >
         <div
@@ -77,11 +79,11 @@ export const BlogTile = (blog: Post) => {
             }}
           >
             <h3>{blog.title}</h3>
-            <div>{formatDateAndTime(new Date(blog.date_posted) )}</div>
           </div>
           <div style={{ marginTop: "10px" }}>
         {blog.metadata}
           </div>
+
         </div>
       </div>
     </div>

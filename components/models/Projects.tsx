@@ -27,14 +27,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           padding: 0,
           cursor: "pointer",
           marginTop: "50px",
-          marginRight: "30px",
+          marginRight: "50px",
         }}
       >
         {imageUrl && (
           <img
             src={
-              // "https://pendulum-it.com/wp-content/uploads/2020/05/Google-Cloud-Platform-GCP-logo.png"
-
               imageUrl?.img ??
               "https://cdn.iconscout.com/icon/free/png-512/stackoverflow-2752065-2284882.png?f=avif&w=256"
             }

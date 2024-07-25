@@ -9,9 +9,10 @@ import {
   fetchProjects,
   fetchStacks,
 } from "../../src/api";
+import Markdown from "react-markdown";
 import { Post, Project } from "../../src/models";
 import { Corrousal } from "../../components/common/Corrousal";
-const Blog = ({ project }: { project: Post }) => {
+const Blog = ({ post }: { post: Post }) => {
   const buttonStyle = {
     padding: "10px",
     borderRadius: "5px",
@@ -20,7 +21,7 @@ const Blog = ({ project }: { project: Post }) => {
     margin: "4px 8px 4px 0px",
     backgroundColor: "black",
   };
-  const imageUrl = project.Media.find((media) => media.is_logo);
+  const imageUrl = post.Media.find((media) => !media.is_logo);
 
   return (
     <Navbar>
@@ -38,12 +39,6 @@ const Blog = ({ project }: { project: Post }) => {
             maxWidth: "1200px",
           }}
         >
-          <div style={{
-            display:"flex",
-            justifyContent:"center"
-          }}>
-            <img src={imageUrl?.img!}  alt="Hero Image" />
-          </div>
           <div>
             <div
               style={{
@@ -62,7 +57,7 @@ const Blog = ({ project }: { project: Post }) => {
               }}
             >
               <div>
-                <h2 style={{ marginBottom: "5px" }}>{project.title}</h2>
+                <h2 style={{ marginBottom: "5px" }}>{post.title}</h2>
               </div>
               <div>
                 <div
@@ -91,7 +86,7 @@ const Blog = ({ project }: { project: Post }) => {
                 // border: "solid 1px white",
               }}
             >
-              {project.categories.map((stack) => (
+              {post.categories.map((stack) => (
                 <Stack
                   iconOnly={false}
                   key={stack.id}
@@ -102,20 +97,24 @@ const Blog = ({ project }: { project: Post }) => {
               ))}
             </div>
           </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              style={{
+                width: "80%",
+              }}
+              src={imageUrl?.img!}
+              alt="logo"
+            />
+          </div>
           <div>
-            <h2
-              style={{
-                padding: "20px",
-              }}
-            >
-              Description
-            </h2>
-            <p
-              dangerouslySetInnerHTML={{ __html: project.content }}
-              style={{
-                padding: "20px",
-              }}
-            ></p>
+            <div style={{ margin: "20px" }}>
+              <Markdown>{post.content}</Markdown>
+            </div>
           </div>
         </div>
       </div>
@@ -124,10 +123,10 @@ const Blog = ({ project }: { project: Post }) => {
 };
 
 export async function getServerSideProps({ params }: any) {
-  const project = await fetchPostById(Number(params.id));
+  const post = await fetchPostById(Number(params.id));
   return {
     props: {
-      project,
+      post,
     },
   };
 }

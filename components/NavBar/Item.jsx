@@ -14,7 +14,7 @@ export const NavbarItem = ({ TO, TEXT, blank }) => {
   useEffect(() => {
     if (typeof TEXT == typeof "") {
       const endpoint = location.href.includes(TEXT);
-      // console.log(endpoint);
+      console.log(TEXT);
       if (
         endpoint ||
         (TEXT == "Work" &&
@@ -30,7 +30,7 @@ export const NavbarItem = ({ TO, TEXT, blank }) => {
 
   return (
     <Link
-      href={TO != undefined ? TO : TEXT != "Work" ? TEXT : "/"}
+      href={TO != undefined ? TO : TEXT != "Work" ? "/"+TEXT : "/"}
       target={blank && "_blank"}
     >
       <div

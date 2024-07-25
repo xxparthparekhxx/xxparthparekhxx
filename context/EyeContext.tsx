@@ -17,7 +17,6 @@ interface IContextProps {
 const EyeContext = createContext({
   state: { ...defaultEyeState },
   dispatch: (e) => {
-    console.log(e, "lode");
   },
 } as IContextProps);
 
