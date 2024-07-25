@@ -6,6 +6,8 @@ import { Navbar } from "../../components/NavBar/Navbar";
 import { fetchProjectById, fetchProjects, fetchStacks } from "../../src/api";
 import { Project } from "../../src/models";
 import { Corrousal } from "../../components/common/Corrousal";
+import Markdown from "react-markdown";
+
 const ProjectDescription = ({ project }: { project: Project }) => {
   const buttonStyle = {
     padding: "10px",
@@ -111,12 +113,9 @@ const ProjectDescription = ({ project }: { project: Project }) => {
             >
               Description
             </h2>
-            <p
-              dangerouslySetInnerHTML={{ __html: project.description_page_html }}
-              style={{
-                padding: "20px",
-              }}
-            ></p>
+            <div style={{ margin: "20px", overflow:"scroll"}}>
+              <Markdown >{project.description_page_html}</Markdown>
+            </div>
           </div>
         </div>
       </div>

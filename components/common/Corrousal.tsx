@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ProjectMedia } from "../../src/models";
 export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
-  const [activeStep, setindex] = useState(0);
+  const [activeStep, setindex] = useState(1);
   const buttonStyle = {
     padding: "20px",
     margin: "10px",
@@ -37,6 +37,7 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
       >
         <div
           style={{
+            height:"700px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -44,7 +45,7 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
         >
           {medias[activeStep].is_image ? (
             <img
-              style={{ borderRadius: 10, height: "700px" }}
+              style={{ borderRadius: 10, maxWidth:"80%" }}
               src={medias[activeStep].img!}
               alt={medias[activeStep].description_for_alt}
             />
@@ -74,7 +75,8 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
           >
             {"< "}
           </button>
-          {medias.map((e, i) => (
+          {medias.map((e, i) =>  !e.is_logo &&i < activeStep+3 && i > activeStep -1 && (
+
             <div
             key={i}
               style={{
@@ -112,11 +114,11 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
               if (activeStep < medias.length-1) {
                 setindex(activeStep + 1);
               } else {
-                setindex(0);
+                setindex(1);
               }
             }}
           >
-            {" >"}
+            {  ">"  }
           </button>
         </div>
       </div>
