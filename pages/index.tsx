@@ -7,6 +7,7 @@ import { fetchProjects, fetchProjectsByStack, fetchStacks } from "../src/api"
 import { useEffect, useState } from 'react'
 import { Project, Stack } from '../src/models'
 import { LeftRight } from '../components/eye/CurveFunctions'
+
 export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects:Project[]}) {
 
   const [SelectedStack, setSelectedStack] = useState<number| null>(null)
@@ -26,8 +27,6 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
 
   }, [SelectedStack])
 
-
-
   return (
     <Navbar>
       <Hero />
@@ -38,7 +37,6 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
         alignItems: "center",
         display: "flex",
         flexDirection: "column"
-
       }}>
         <h2 style={{
           marginBottom: "1em"
@@ -51,11 +49,9 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
           justifyContent: "center",
           flexWrap: "wrap",
         }}>
-
           {
             stacks.map((e:Stack) => <StackView iconOnly={false} key={e.id} {...e} setStackSort={(e)=>setSelectedStack(e)} selected={e.id === SelectedStack}></StackView>)
           }
-
         </div>
         <h2 style={{
           margin: "1em"
@@ -86,19 +82,18 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
             </div>
         }
       </div>
-
-
     </Navbar>
   )
 }
 
-export async function getStaticPaths(context:any) {
+export async function getStaticProps(context:any) {
   const [Stacks, allProjects] = await Promise.all([fetchStacks(), fetchProjects()])
 
   return {
     props: {
       stacks: Stacks,
       allProjects
-    }
+    },
+    revalidate: 60,  // Enable ISR with a revalidation time of 60 seconds
   }
 }
