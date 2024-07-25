@@ -32,3 +32,4 @@ yarn-error.log*
 .vercel
 
 env
+components/work/styles.module.css
