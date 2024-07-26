@@ -16,16 +16,18 @@ const Stack = ({ id, img, name, setStackSort, selected,iconOnly=false }: StackPr
     <FocusOnMouseEnter>
     <div
       onClick={() => setStackSort(id)}
+    
       className={styles.StackChipContainer}
       style={
         selected
           ? {
               boxShadow: "0px 0px 20px #00ff41",
+           
             }
           : {}
       }
     >
-      <img  className={styles.StackImage} src={img} alt={name} />
+      <Image width={48} height={48} priority style={{objectFit:"contain", backgroundColor:"white"}} className={styles.StackImage} src={img} alt={name} />
       {!iconOnly? <div className={styles.StackName}>
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </div>:<></>}
