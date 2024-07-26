@@ -45,7 +45,7 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
         >
           {medias[activeStep].is_image ? (
             <img
-              style={{ borderRadius: 10, maxWidth:"80%" }}
+              style={{ borderRadius: 10, maxWidth:"80%", maxHeight:"700px" }}
               src={medias[activeStep].img!}
               alt={medias[activeStep].description_for_alt}
             />

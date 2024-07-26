@@ -123,13 +123,30 @@ const ProjectDescription = ({ project }: { project: Project }) => {
   );
 };
 
-export async function getServerSideProps({ params }: any) {
+export async function getStaticProps({ params }: any) {
   const project = await fetchProjectById(Number(params.id));
+  if (!project) {
+    return { notFound: true };
+  }
+
   return {
     props: {
       project,
     },
+    revalidate: 1800, // Revalidate every 60 seconds
+  };
+ 
+}
+ 
+
+export async function getStaticPaths() {
+  const posts = await fetchProjects();
+  
+  return {
+    paths: posts.map((post) => ({ 
+      params: { id: [post.id.toString()] } // Wrap the id in an array
+    })),
+    fallback: 'blocking',
   };
 }
-
 export default ProjectDescription;

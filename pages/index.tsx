@@ -94,6 +94,6 @@ export async function getStaticProps(context:any) {
       stacks: Stacks,
       allProjects
     },
-    revalidate: 60,  // Enable ISR with a revalidation time of 60 seconds
+    revalidate: 1800,  // Enable ISR with a revalidation time of 60 seconds
   }
 }

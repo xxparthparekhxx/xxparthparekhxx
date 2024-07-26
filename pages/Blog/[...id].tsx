@@ -5,6 +5,7 @@ import Stack from "../../components/models/Stack";
 import { Navbar } from "../../components/NavBar/Navbar";
 import {
   fetchPostById,
+  fetchPosts,
   fetchProjectById,
   fetchProjects,
   fetchStacks,
@@ -122,13 +123,31 @@ const Blog = ({ post }: { post: Post }) => {
   );
 };
 
-export async function getServerSideProps({ params }: any) {
-  const post = await fetchPostById(Number(params.id));
+
+export async function getStaticProps({ params }: { params: { id: string[] } }) {
+  const id = params.id.join('/'); // Join the array elements if needed
+  const post = await fetchPostById(Number(id));
+
+  if (!post) {
+    return { notFound: true };
+  }
+
   return {
     props: {
       post,
     },
+    revalidate: 1800, // Revalidate every 60 seconds
   };
 }
 
+export async function getStaticPaths() {
+  const posts = await fetchPosts();
+  
+  return {
+    paths: posts.map((post) => ({ 
+      params: { id: [post.id.toString()] } // Wrap the id in an array
+    })),
+    fallback: 'blocking',
+  };
+}
 export default Blog;
