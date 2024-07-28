@@ -90,7 +90,7 @@ const Qr = () => {
   return (
     <div className="flex  justify-center ">
     <div className="w-[958px]">
-      <div className="flex h-screen flex-col items-center justify-center ">
+      <div className="flex min-h-screen flex-col items-center justify-center ">
         <div className="flex justify-center flex-col text-center">
           <div className="m-2 text-4xl bold">
             QR Code Generator - Create QR Codes for Free
