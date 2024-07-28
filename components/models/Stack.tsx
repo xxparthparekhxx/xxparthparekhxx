@@ -27,7 +27,7 @@ const Stack = ({ id, img, name, setStackSort, selected,iconOnly=false }: StackPr
           : {}
       }
     >
-      <Image  width={48} height={48} priority style={{objectFit:"contain"}} className={styles.StackImage} src={img} alt={name} />
+      <img  width={48} height={48} className={styles.StackImage} src={img} alt={name} />
       {!iconOnly? <div className={styles.StackName}>
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </div>:<></>}
