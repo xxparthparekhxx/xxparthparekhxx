@@ -10,7 +10,6 @@
   font-weight: bold;
   overflow: hidden;
   margin-left: 0.5rem;
-
   white-space: nowrap;
   text-overflow: ellipsis;
 }

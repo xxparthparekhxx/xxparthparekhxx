@@ -2,7 +2,7 @@ import React from 'react'
 import { GradientBorder } from '../common/GradientBorder';
 
 
-import styles from "./styles.module.css";
+import styles from "./style.module.css";
 
 const Hero = () => {
 

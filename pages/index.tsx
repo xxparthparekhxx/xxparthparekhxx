@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Navbar } from '../components/NavBar/Navbar'
-import { Hero } from '../components/Work/Hero'
+import { Hero } from '../components/work/Hero'
 import StackView from "../components/models/Stack"
 import ProjectCard from "../components/models/Projects"
 import { fetchProjects, fetchProjectsByStack, fetchStacks } from "../src/api"
