@@ -94,7 +94,7 @@ const Blog = ({ posts }: { posts: Post[] }) => {
   return (
     <Navbar>
       {posts.map((post, I) => (
-        <div className="w-[450px]">
+        <div  key={I} className="w-[450px]">
 
         <BlogTile key={I} {...post}></BlogTile>
         </div>
