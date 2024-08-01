@@ -37,10 +37,13 @@ export const BlogTile = (blog: Post) => {
             }}
           >
             <div
+            className="flex justify-center align-middle "
               style={{
                 display: "flex",
                 flexFlow: "row",
-              }}
+                flexWrap:"wrap"
+                
+                }}
             >
               <div
                 style={{
@@ -52,7 +55,9 @@ export const BlogTile = (blog: Post) => {
                 <img
                   style={{
                     borderRadius: "16px",
+                    width:'250px',
                   }}
+                  className="m-2"
                   height={"100px"}
                   src={imageUrl?.img!}
                   alt=""
@@ -72,7 +77,7 @@ export const BlogTile = (blog: Post) => {
                     justifyContent: "space-between",
                   }}
                 >
-                  <h3>{blog.title}</h3>
+                  <h3 className="text-xl">{blog.title}</h3>
                 </div>
                 <div style={{ marginTop: "10px" }}>{blog.metadata}</div>
               </div>
@@ -89,7 +94,10 @@ const Blog = ({ posts }: { posts: Post[] }) => {
   return (
     <Navbar>
       {posts.map((post, I) => (
+        <div className="w-[450px]">
+
         <BlogTile key={I} {...post}></BlogTile>
+        </div>
       ))}
     </Navbar>
   );

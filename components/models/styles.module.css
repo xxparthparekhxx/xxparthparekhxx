@@ -1,15 +1,16 @@
 .StackImage {
-  width: 3rem;
-  height: 3rem;
+  width: 1.5rem;
+  height: 1.5rem;
   object-fit: contain;
   border-radius: 50%;
-  margin-right: 0.5rem;
 }
 
 .StackName {
   font-size: 1rem;
   font-weight: bold;
   overflow: hidden;
+  margin-left: 0.5rem;
+
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -47,6 +48,7 @@
 @media screen and (max-width: 765px) {
   .Container {
     flex-direction: column;
+    width: 100%;
   }
 
   .Image {
@@ -63,7 +65,7 @@
 }
 @media screen and (max-width: 400px) {
   .Container {
-    width: 120%;
+    width: 100%;
   }
   .Content{
     width: 100%;

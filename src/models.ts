@@ -14,11 +14,19 @@ export type ProjectMedia = {
   description_for_alt: string;
 };
 
+export type Company = {
+  id: number;
+  name: string;
+  logo: string;
+  main_url: string;
+  stock_indicator: string;
+};
+
 export type Project = {
   id: number;
   name: string;
   start_date: string;
-  end_date: string;
+  end_date: string | null;
   description: string;
   github_url: string;
   hosted_url: string;
@@ -26,6 +34,18 @@ export type Project = {
   description_page_html: string;
   stacks: Stack[];
   medias: ProjectMedia[];
+  company: Company | null;
+};
+
+export type WorkExperience = {
+  id: number;
+  company: Company;
+  position: string;
+  start_date: string;
+  end_date: string | null;
+  description: string;
+  is_current: boolean;
+  projects: Project[];
 };
 
 export type Post = {

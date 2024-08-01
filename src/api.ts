@@ -1,6 +1,6 @@
 const API_URL = "https://api.parthp.in/project/";
 
-import { Contact, ContactInput, Post, Project, ProjectMedia, Stack } from "./models";
+import { Company, Contact, ContactInput, Post, Project, ProjectMedia, Stack, WorkExperience } from "./models";
 
 // Fetch all stacks
 export const fetchStacks = async (): Promise<Stack[]> => {
@@ -86,4 +86,42 @@ export const createContact = async (contact: ContactInput): Promise<Contact> => 
 
   const createdContact = await response.json();
   return createdContact;
+};
+
+// New API functions for Company
+export const fetchCompanies = async (): Promise<Company[]> => {
+  const response = await fetch(API_URL + "companies/");
+  const companies = await response.json();
+  return companies;
+};
+
+export const fetchCompanyById = async (id: number): Promise<Company> => {
+  const response = await fetch(API_URL + `companies/${id}/`);
+  const company = await response.json();
+  return company;
+};
+
+// New API functions for WorkExperience
+export const fetchWorkExperiences = async (): Promise<WorkExperience[]> => {
+  const response = await fetch(API_URL + "work-experiences/");
+  const workExperiences = await response.json();
+  return workExperiences;
+};
+
+export const fetchWorkExperienceById = async (id: number): Promise<WorkExperience> => {
+  const response = await fetch(API_URL + `work-experiences/${id}/`);
+  const workExperience = await response.json();
+  return workExperience;
+};
+
+export const fetchProjectsByCompany = async (companyId: number): Promise<Project[]> => {
+  const response = await fetch(API_URL + `companies/${companyId}/projects/`);
+  const projects = await response.json();
+  return projects;
+};
+
+export const fetchWorkExperiencesByCompany = async (companyId: number): Promise<WorkExperience[]> => {
+  const response = await fetch(API_URL + `companies/${companyId}/work-experiences/`);
+  const workExperiences = await response.json();
+  return workExperiences;
 };

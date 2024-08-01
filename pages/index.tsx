@@ -21,6 +21,10 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
         setProjects([])
         setProjects(await fetchProjectsByStack(SelectedStack))
         setProjectsLoading(false)
+      }else {
+        setProjectsLoading(true)
+        setProjects(await fetchProjects())
+        setProjectsLoading(false)
       }
     }
     x()
@@ -39,7 +43,8 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
         flexDirection: "column"
       }}>
         <h2 style={{
-          marginBottom: "1em"
+          marginBottom: "1em",
+          fontSize:"2em"
         }}>
           Tech I Work With
         </h2>
@@ -49,12 +54,14 @@ export default function Home({ stacks, allProjects }:{stacks:Stack[],allProjects
           justifyContent: "center",
           flexWrap: "wrap",
         }}>
+           {SelectedStack != null &&<StackView iconOnly={false} key={1} {...{name:"clear",id:0,img:"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-white-round-icon.png"}} setStackSort={(e)=>setSelectedStack(null)} selected={SelectedStack === null}></StackView>}
           {
             stacks.map((e:Stack) => <StackView iconOnly={false} key={e.id} {...e} setStackSort={(e)=>setSelectedStack(e)} selected={e.id === SelectedStack}></StackView>)
           }
         </div>
         <h2 style={{
-          margin: "1em"
+          margin: "1em",
+          fontSize:"2em"
         }}>
           My Projects
         </h2>

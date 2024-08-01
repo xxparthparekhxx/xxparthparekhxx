@@ -27,7 +27,7 @@ const Stack = ({ id, img, name, setStackSort, selected,iconOnly=false }: StackPr
           : {}
       }
     >
-      <img  width={48} height={48} className={styles.StackImage} src={img} alt={name} />
+      <img  width={28} height={28} className={styles.StackImage} src={img} alt={name} />
       {!iconOnly? <div className={styles.StackName}>
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </div>:<></>}
