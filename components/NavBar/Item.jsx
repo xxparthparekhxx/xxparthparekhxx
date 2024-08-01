@@ -56,7 +56,7 @@ export const NavbarItem = ({ TO, TEXT, blank }) => {
             height: "0.2em",
             marginTop: "0.3em",
             borderRadius: "4px",
-            backgroundColor: "#00ff41",
+            backgroundColor: "#4ade80",
             opacity: BeingHovered ? 1 : 0,
             transition: "all .5s cubic-bezier(.175,.885,.32,1.275)",
             transform: "translate3d(0,5px,0);",

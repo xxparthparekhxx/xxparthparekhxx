@@ -39,7 +39,7 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
           <h2 className={styles.Title}>
             {workExperience.position}
             {workExperience.is_current && (
-              <i className={styles.Current}>Current</i>
+              <i className={styles.Completed}>Current</i>
             )}
           </h2>
           <p className={styles.Company}>{workExperience.company.name}</p>

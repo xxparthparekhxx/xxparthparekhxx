@@ -142,7 +142,7 @@ export default function Home({
             flexBasis: "center",
           }}
         >
-          {experiences.map((e) => (
+          {experiences.reverse().map((e) => (
             <WorkExperienceCard
               key={e.id}
               workExperience={e}

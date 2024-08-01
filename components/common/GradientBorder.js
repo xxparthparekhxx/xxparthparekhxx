@@ -16,7 +16,7 @@ export const GradientBorder = (props,spinny) => {
     <div style={{
       /* border: double 1em transparent; */
       borderRadius: "4px",
-      backgroundImage: "linear-gradient("+digg+"deg,#0d0208 30%,#003b00 50%,#008f11 70%,#00ff41 94%)",
+      backgroundImage: "linear-gradient("+digg+"deg,#0d0208 30%,#003b00 50%,#008f11 70%,#4ade80 94%)",
       height:"max-content",
       backgroundOrigin: "border-box",
       backgroundClip: "content-box, border-box"

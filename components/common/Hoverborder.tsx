@@ -4,9 +4,9 @@ function Hoverborder(props:any) {
     const [beingHovered, setbeingHovered] = useState(false)
     let bs
     if (beingHovered){
-        bs  ="0px 0px 5px #00ff41"
+        bs  ="0px 0px 5px #4ade80"
     }else{
-        bs = "0px 0px 15px #00ff41"
+        bs = "0px 0px 15px #4ade80"
     }
     
   return (

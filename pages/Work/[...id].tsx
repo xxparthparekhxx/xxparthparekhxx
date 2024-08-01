@@ -12,7 +12,7 @@ const ProjectDescription = ({ project }: { project: Project }) => {
   const buttonStyle = {
     padding: "10px",
     borderRadius: "5px",
-    boxShadow: "0px 0px 10px #00ff41",
+    boxShadow: "0px 0px 10px #4ade80",
     border: "solid 1px",
     margin: "4px 8px 4px 0px",
     backgroundColor:'black',
@@ -41,7 +41,7 @@ const ProjectDescription = ({ project }: { project: Project }) => {
                 border: "solid 1px 0px 1px 0px",
                 borderRadius: "20px" ,
                 padding: "20px",
-                boxShadow: "0px 0px 5px #00ff41",
+                boxShadow: "0px 0px 5px #4ade80",
                 transition: "box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
                 flexWrap: "wrap",
                 display: "flex",

@@ -17,7 +17,7 @@ const Field = ({
   const inputStyle = {
     padding: "10px",
     textSizeAdjust: "20em",
-    border: " solid 1px #00ff41",
+    border: " solid 1px #4ade80",
     width: "100%",
   };
   return (
@@ -52,7 +52,7 @@ function ContactUs() {
   const formStyle = {
     padding: "30px",
     margin: "20px",
-    border: "solid 1px  #00ff41 ",
+    border: "solid 1px  #4ade80 ",
     borderRadius: "10px",
     display: "flex",
     flexFlow: "column",
@@ -66,10 +66,15 @@ function ContactUs() {
     <div>
       <form style={formStyle} onSubmit={async(e)=>{
         e.preventDefault();
-        const contact =   ContactInputFactory(Name,Email,Reason)
-        const created =  await createContact(contact)
-        setEmail("");setName("");setReason("");
-        console.log(created)
+        try{
+
+          const contact =   ContactInputFactory(Name,Email,Reason)
+          const created =  await createContact(contact)
+        }catch(e){
+          
+        } finally{
+          setEmail("");setName("");setReason("");
+        }
       }} method="post">
         <Field title="Name" onChange={setName} />
         <Field title="Email" email onChange={setEmail} />
@@ -81,7 +86,7 @@ function ContactUs() {
             fontSize: "20px",
             color: "black",
             fontWeight: "bold",
-            backgroundColor: "#00ff41",
+            backgroundColor: "#4ade80",
           }}
           type="submit"
           value="Submit"

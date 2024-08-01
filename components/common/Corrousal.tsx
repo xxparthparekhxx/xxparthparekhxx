@@ -8,7 +8,7 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
     color: "white",
     fontSize: "15px",
     backgroundColor: "black",
-    boxShadow: "0px 0px 7px #00ff41",
+    boxShadow: "0px 0px 7px #4ade80",
     transition: "box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
   };
   console.log(activeStep)
@@ -97,7 +97,7 @@ export const Corrousal = ({ medias }: { medias: ProjectMedia[] }) => {
                         : "8px 13px 13px 8px",
                     transition: "all .5s cubic-bezier(.175,.885,.32,1.275)",
 
-                    border: i == activeStep ? "solid 3px #00ff41" : undefined,
+                    border: i == activeStep ? "solid 3px #4ade80" : undefined,
                   }}
                   src={e.img!}
                   alt={e.description_for_alt}

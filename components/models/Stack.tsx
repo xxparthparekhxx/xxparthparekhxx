@@ -21,7 +21,7 @@ const Stack = ({ id, img, name, setStackSort, selected,iconOnly=false }: StackPr
       style={
         selected
           ? {
-              boxShadow: "0px 0px 20px #00ff41",
+              boxShadow: "0px 0px 20px #4ade80",
            
             }
           : {}

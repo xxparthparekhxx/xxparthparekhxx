@@ -1,12 +1,12 @@
 .gradientText {
   color: #fff;
-  background:#00ff41;
+  background:#4ade80;
    /* linear-gradient(
     271deg,
     #fff 30%,
     #fff 50%,
-    #00ff41 70%,
-    #00ff41 94%
+    #4ade80 70%,
+    #4ade80 94%
   ); */
   background-clip: border-box;
   -webkit-background-clip: text;
