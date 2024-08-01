@@ -9,11 +9,8 @@ interface ProjectCardProps {
   project: Project;
 }
 
-// Define the project card component
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const router = useRouter();
-  console.log(project);
-  // Get the URL for the project's image
   const imageUrl = project.medias.find((media) => media.is_logo);
 
   return (
@@ -32,7 +29,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       >
         {imageUrl && (
           <img
-          
             src={
               imageUrl?.img ??
               "https://cdn.iconscout.com/icon/free/png-512/stackoverflow-2752065-2284882.png?f=avif&w=256"
@@ -47,34 +43,32 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {project.completed && <i className={styles.Completed}>Completed</i>}
           </h2>
           {project.description && (
-            <p className={styles.StartDate}>
+            <p className={styles.Description}>
               {project.description.substring(0, 150)}...
             </p>
           )}
-          {
-            <p className={styles.StartDate}>
-              {project.start_date && project.start_date} -{" "}
-              {project.end_date && project.end_date}
+          <p className={styles.DateRange}>
+            {project.start_date} - {project.end_date || 'Present'}
+          </p>
+          {project.company && (
+            <p className={styles.Company}>
+              Company: {project.company.name}
             </p>
-          }
+          )}
           <div className={styles.StackTiles}>
-            {project.stacks.map(
-              (stack, i) =>
-                i < 4 && (
-                  <Stack
-                    key={stack.id}
-                    {...stack}
-                    selected={false}
-                    iconOnly={true}
-                    setStackSort={(e) => {}}
-                  />
-                )
-            )}
+            {project.stacks.slice(0, 4).map((stack) => (
+              <Stack
+                key={stack.id}
+                {...stack}
+                selected={false}
+                iconOnly={true}
+                setStackSort={() => {}}
+              />
+            ))}
           </div>
         </div>
       </div>
     </FocusOnMouseEnter>
   );
 };
-
 export default ProjectCard;
