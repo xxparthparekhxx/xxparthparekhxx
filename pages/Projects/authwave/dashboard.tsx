@@ -98,6 +98,7 @@ export default function Dashboard() {
                 <ul className="space-y-2">
                   {apps.map((app) => (
                     <li
+                    key={app.id}
                       onClick={() => handleAppClick(app)}
                       className={`cursor-pointer p-2  rounded-md shadow ${
                         selectedApp?.id == app.id ? "border" : ""
@@ -127,7 +128,7 @@ export default function Dashboard() {
                 {selectedApp ? (
                   <ul className="space-y-2">
                     {users.map((user) => (
-                      <li className="p-2 border rounded-md shadow">
+                      <li key={user.username} className="p-2 border rounded-md shadow">
                         {user.username}
                       </li>
                     ))}
