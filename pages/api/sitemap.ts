@@ -1,5 +1,3 @@
-// pages/sitemap.xml.js
-import { getServerSideSitemap } from "next-sitemap";
 import { NextApiRequest, NextApiResponse } from 'next';
 import {
   fetchProjects,
