@@ -4,6 +4,7 @@ import { Project } from "../../src/models";
 import Stack from "./Stack";
 import styles from "./styles.module.css";
 import FocusOnMouseEnter from "../eye/FocusOnMouseEnter";
+import Markdown from "react-markdown";
 
 interface ProjectCardProps {
   project: Project;
@@ -43,9 +44,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {project.completed && <i className={styles.Completed}>Completed</i>}
           </h2>
           {project.description && (
-            <p className={styles.Description}>
-              {project.description.substring(0, 150)}...
-            </p>
+            <Markdown className={`${styles.Description} `}>
+              {project.description.split("\n")[0]}
+            </Markdown>
           )}
           <p className={styles.DateRange}>
             {project.start_date} - {project.end_date || 'Present'}

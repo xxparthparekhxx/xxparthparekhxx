@@ -14,7 +14,7 @@ const WorkExperienceDescription = ({
   return (
     <Navbar>
       <div className="flex justify-center items-center">
-        <div className="p-8 w-full max-w-[85%]">
+        <div className="p-6 w-full max-w-[85%]">
           <div className="mb-8">
             <div className="m-4 border border-green-400 rounded-lg p-6 shadow-lg shadow-green-400/50 transition-shadow duration-300 ease-out hover:shadow-green-400/75 bg-black flex flex-wrap flex-row justify-between items-center">
               <div className="flex items-center space-x-4">
@@ -47,18 +47,9 @@ const WorkExperienceDescription = ({
               </div>
             </div>
           </div>
-
-          <div className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">Description</h2>
-            <div className="bg-gray-800 rounded-lg p-6 shadow-md">
-              <Markdown>{workExperience.description}</Markdown>
-            </div>
-          </div>
-
           {workExperience.company.stock_indicator && (
-            <div className="mb-8">
-              <h2 className="text-xl font-semibold mb-4">Company Info</h2>
-              <div className="bg-black flex flex-row justify-between border border-green-400 rounded-lg p-6 shadow-lg shadow-green-400/50 transition-shadow duration-300 ease-out hover:shadow-green-400/75  flex-wrap  items-center">
+            <div className="mb-8 mx-5">
+              <div className=" flex py-5 flex-row w-[100%] justify-between rounded-lg shadow-lg transition-shadow duration-300 ease-out  flex-wrap  items-center">
                 <p>Stock Indicator: {workExperience.company.stock_indicator}</p>
                 <a
                   href={workExperience.company.main_url}
@@ -71,6 +62,12 @@ const WorkExperienceDescription = ({
               </div>
             </div>
           )}
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold mb-4">Description</h2>
+            <div className="shadow-md">
+              <Markdown className="markdown">{workExperience.description}</Markdown>
+            </div>
+          </div>
 
           <div>
             <h2 className="text-xl font-semibold mb-4">Projects</h2>

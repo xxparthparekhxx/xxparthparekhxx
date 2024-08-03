@@ -42,6 +42,10 @@ export default function Home({
     };
     x();
   }, [SelectedStack]);
+  function getReversed(arr:any[]) {
+    return  arr.reverse()
+  }
+  
 
   return (
     <Navbar>
@@ -131,7 +135,7 @@ export default function Home({
             fontSize: "2em",
           }}
         >
-          Work Experiences
+          Work Experience
         </h2>
         <div
           style={{
@@ -142,12 +146,12 @@ export default function Home({
             flexBasis: "center",
           }}
         >
-          {experiences.reverse().map((e) => (
+          {getReversed(experiences.map((e) => (
             <WorkExperienceCard
               key={e.id}
               workExperience={e}
             ></WorkExperienceCard>
-          ))}
+          )))}
         </div>
 
         {experiences.length == 0 && <div>Still learning</div>}

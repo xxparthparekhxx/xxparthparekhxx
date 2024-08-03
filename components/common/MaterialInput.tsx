@@ -34,7 +34,7 @@ const Field = ({
           name=""
           id=""
           cols={60}
-          rows={20}
+          rows={10}
           style={inputStyle}
         ></textarea>
       ) : (

@@ -114,7 +114,7 @@ const ProjectDescription = ({ project }: { project: Project }) => {
               Description
             </h2>
             <div style={{ margin: "20px", overflow:"scroll"}}>
-              <Markdown >{project.description_page_html}</Markdown>
+              <Markdown className="markdown">{project.description_page_html}</Markdown>
             </div>
           </div>
         </div>

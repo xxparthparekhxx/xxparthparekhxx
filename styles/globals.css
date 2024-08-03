@@ -67,3 +67,7 @@ a {
     color-scheme: dark;
   }
 }
+
+.markdown > * {
+  all: revert;
+}
