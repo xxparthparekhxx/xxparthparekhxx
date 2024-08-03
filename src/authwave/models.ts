@@ -17,6 +17,7 @@ export interface AdminLoginResponse {
 
 // App Types
 export interface App {
+    id?:number,
     name: string;
     client_id: string;
     client_secret: string;

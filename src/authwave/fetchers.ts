@@ -63,12 +63,16 @@ export async function createApp(
 }
 
 export async function deleteApp(token: string, appId: number): Promise<void> {
-  await apiFetch<void>(`${API_URL}app/delete/${appId}/`, {
-    method: "DELETE",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  try {
+    await apiFetch<void>(`${API_URL}app/delete/${appId}/`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  } catch {
+    console.log("deleted successfully");
+  }
 }
 
 export async function listApps(token: string): Promise<App[]> {

@@ -1,20 +1,37 @@
-
 // app/register/page.tsx
-'use client';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { createAdminUser, adminLogin } from "../../../src/authwave/fetchers";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Register() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Implement the API call to create admin user
-    // On success, redirect to login page
-    router.push('/Projects/authwave/login');
-  };
+    try{
+        await createAdminUser({ username, password });
+        await adminLogin(username, password);
+        // On success, redirect to login page
+        router.push("/Projects/authwave/Login");
+    }catch{
+        toast.error('Username already exists', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
+    }
+    };
 
   return (
     <div className="min-h-screen bg-black flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -23,12 +40,16 @@ export default function Register() {
           Create Admin User
         </h2>
       </div>
+      <ToastContainer></ToastContainer>
 
       <div className="mt-8 sm:mx-auto border   sm:w-full sm:max-w-md">
         <div className="bg-black py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="username" className="block text-sm font-medium text-white">
+              <label
+                htmlFor="username"
+                className="block text-sm font-medium text-white"
+              >
                 Username
               </label>
               <div className="mt-1">
@@ -45,7 +66,10 @@ export default function Register() {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-white">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-white"
+              >
                 Password
               </label>
               <div className="mt-1">
