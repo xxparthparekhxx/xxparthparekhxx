@@ -103,7 +103,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "context/EyeContext.js", "pages/index.tsx", "components/eye/eye.jsx", "components/eye/eye.js"  ],
+, "context/EyeContext.js", "pages/index.tsx", "components/eye/eye.jsx", "components/eye/eye.js", "pages/sitemap.xml.js"  ],
   "exclude": [
     "node_modules"
   ]
