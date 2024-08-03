@@ -146,12 +146,12 @@ export default function Home({
             flexBasis: "center",
           }}
         >
-          {getReversed(experiences.map((e) => (
+          {experiences.map((e) => (
             <WorkExperienceCard
               key={e.id}
               workExperience={e}
             ></WorkExperienceCard>
-          )))}
+          ))}
         </div>
 
         {experiences.length == 0 && <div>Still learning</div>}
