@@ -60,7 +60,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const pg = await getAllPages();
 
   const pages = pg.map((page) => ({
-    loc: `https://parthp.in${page.url}`, // Replace with your actual domain
+    loc: page.url, // Replace with your actual domain
     lastmod: page.lastModified.toISOString(),
     // You can add more fields like changefreq, priority, etc.
   }));
