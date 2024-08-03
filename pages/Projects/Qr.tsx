@@ -1,7 +1,9 @@
 import React, { useCallback, useRef, useState } from "react";
 import QRCode from "react-qr-code";
 import Hoverborder from "../../components/common/Hoverborder";
-
+import Head from "next/head";
+import { DefaultSeo } from "next-seo";
+import { QrSeo } from "../../next-seo.config";
 const Qr = () => {
   const [qrVal, setqrVal] = useState("");
   const qrRef = useRef<HTMLDivElement>(null);
@@ -88,57 +90,68 @@ const Qr = () => {
     }
   }
   return (
-    <div className="flex  justify-center ">
-    <div className="w-[958px]">
-      <div className="flex min-h-screen flex-col items-center justify-center ">
-        <div className="flex justify-center flex-col text-center">
-          <div className="m-2 text-4xl bold">
-            QR Code Generator - Create QR Codes for Free
-          </div>
-          <div className="m-2">
-            Generate QR Codes effortlessly with our intuitive interface. Access
-            a free plan that never expires! Customize your QR Codes, track their
-            performance, and make informed decisions with ease.
-          </div>
-        </div>
-        <div className="m-10 p-10 rounded-xl w-3/4 border bg-card text-card-foreground shadow">
-          <div className="flex flex-col-reverse justify-between md:flex-row ">
-            <div className="w-[100%] min-h-[100%] flex justify-between flex-col">
-              <div className="flex  justify-center text-2xl my-3 stext-center">
-                Just enter the data in the textfield below it will auto reflect
-                on the qrcode
+    <>
+          <DefaultSeo {...QrSeo}/>
+
+        <Head>
+          <title>QR Code Genrator</title>
+          <meta name="description" content="Simple webite to generate qr codes and download them" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+      <div className="flex  justify-center ">
+        <div className="w-[958px]">
+          <div className="flex min-h-screen flex-col items-center justify-center ">
+            <div className="flex justify-center flex-col text-center">
+              <div className="m-2 text-4xl bold">
+                QR Code Generator - Create QR Codes for Free
               </div>
-              <div>
-                <textarea
-                  className="flex min-h-[60px] min-w-[100%] rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-                  value={qrVal}
-                  onChange={(e) => checkString(e.target.value)}
-                />
-                <div className="flex justify-end">
-                  <input
-                    onClick={downloadQRCode}
-                    type="button"
-                    value={Downloading ? "✅ Downloading" : "Download"}
-                    className="p-2 border-white border rounded-xl mt-2"
-                  />
-                  <input
-                    onClick={copyQRCodeToClipboard}
-                    type="button"
-                    value={Coppied ? "✅ Coppied" : "Copy"}
-                    className="p-2 ml-3 border-white border rounded-xl mt-2"
-                  />
-                </div>
+              <div className="m-2">
+                Generate QR Codes effortlessly with our intuitive interface.
+                Access a free plan that never expires! Customize your QR Codes,
+                track their performance, and make informed decisions with ease.
               </div>
             </div>
-            <div className="flex flex-row justify-center">
-              <div ref={qrRef} className="md:ml-10 bg-white p-3">
-                <QRCode value={qrVal} />
+            <div className="m-10 p-10 rounded-xl w-3/4 border bg-card text-card-foreground shadow">
+              <div className="flex flex-col-reverse justify-between md:flex-row ">
+                <div className="w-[100%] min-h-[100%] flex justify-between flex-col">
+                  <div className="flex  justify-center text-2xl my-3 stext-center">
+                    Just enter the data in the textfield below it will auto
+                    reflect on the qrcode
+                  </div>
+                  <div>
+                    <textarea
+                      className="flex min-h-[60px] min-w-[100%] rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                      value={qrVal}
+                      onChange={(e) => checkString(e.target.value)}
+                    />
+                    <div className="flex justify-end">
+                      <input
+                        onClick={downloadQRCode}
+                        type="button"
+                        value={Downloading ? "✅ Downloading" : "Download"}
+                        className="p-2 border-white border rounded-xl mt-2"
+                      />
+                      <input
+                        onClick={copyQRCodeToClipboard}
+                        type="button"
+                        value={Coppied ? "✅ Coppied" : "Copy"}
+                        className="p-2 ml-3 border-white border rounded-xl mt-2"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-row justify-center">
+                  <div ref={qrRef} className="md:ml-10 bg-white p-3">
+                    <QRCode value={qrVal} />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div></div>
+    </>
   );
 };
 

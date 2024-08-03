@@ -12,6 +12,7 @@ export const Navbar = ({ children }) => {
     return (
 
     <Head>
+      <DefaultSeo {...SEO}/>
 
         <header style={{
             position: 'fixed',

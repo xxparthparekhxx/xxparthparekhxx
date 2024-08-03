@@ -6,7 +6,6 @@ export default function App({ Component, pageProps }) {
   return (
 
     <EyeState>
-      <DefaultSeo {...SEO}/>
       <Component {...pageProps} />
     </EyeState>
   )
