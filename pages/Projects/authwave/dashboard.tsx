@@ -38,7 +38,7 @@ export default function Dashboard() {
     if (token == null){
       router.push("/Projects/authwave");
     }
-  }, []);
+  }, [router]);
   useEffect(() => {
     fetchApps();
   }, []);

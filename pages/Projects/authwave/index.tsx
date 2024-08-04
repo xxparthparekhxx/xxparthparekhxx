@@ -9,7 +9,7 @@ export default function Home() {
     if (token != null){
       router.push("/Projects/authwave/dashboard");
     }
-  }, []);
+  }, [router]);
   return (
     <div className="min-h-screen bg-black-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-lg">

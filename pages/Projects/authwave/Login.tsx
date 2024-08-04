@@ -35,7 +35,7 @@ export default function Login() {
     if (token != null){
       router.push("/Projects/authwave/dashboard");
     }
-  }, []);
+  }, [router]);
 
   return (
     <div className="min-h-screen bg-black flex flex-col justify-center py-12 sm:px-6 lg:px-8">
