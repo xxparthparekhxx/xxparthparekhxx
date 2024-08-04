@@ -1,6 +1,15 @@
 import Link from 'next/link';
+import {  useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export default function Home() {
+  const router=useRouter()
+  useEffect(() => {
+    const token =localStorage.getItem("adminToken")
+    if (token != null){
+      router.push("/Projects/authwave/dashboard");
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-black-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-lg">

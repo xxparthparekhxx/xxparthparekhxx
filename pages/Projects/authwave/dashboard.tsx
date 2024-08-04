@@ -8,10 +8,17 @@ import {
   registerUser,
   listUsers,
   deleteApp,
+  deleteUser,
 } from "../../../src/authwave/fetchers";
 import { App, User } from "../../../src/authwave/models";
 import keygen from "keygen";
-import { FaCircleInfo, FaRegCopy, FaPlus } from "react-icons/fa6";
+import {
+  FaCircleInfo,
+  FaRegCopy,
+  FaPlus,
+  FaTrash,
+  FaUser,
+} from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import copyToClipboard from "../../../utils/copyToClipBoard";
@@ -26,7 +33,12 @@ export default function Dashboard() {
   const [addUser, setaddUser] = useState(false);
   const [addUserUsername, setaddUserUsername] = useState("");
   const [addUserPassword, setaddUserPassword] = useState("");
-
+  useEffect(() => {
+    const token =localStorage.getItem("adminToken")
+    if (token == null){
+      router.push("/Projects/authwave");
+    }
+  }, []);
   useEffect(() => {
     fetchApps();
   }, []);
@@ -45,8 +57,13 @@ export default function Dashboard() {
     // Implement API call to fetch apps
     // For now, we'll use dummy data
     let token = localStorage.getItem("adminToken");
-    const res = await listApps(token!);
-    setApps(res);
+    if(token != null){
+      const res = await listApps(token!);
+      setApps(res);
+      if (res.length >=1 ){
+        setSelectedApp(res[0])
+      }
+    }
   };
 
   const fetchUsers = async (appId: number) => {
@@ -65,11 +82,7 @@ export default function Dashboard() {
     // Implement API call to create a new app
     // For now, we'll just add it to the local state
     let token = localStorage.getItem("adminToken");
-    await createApp(token!, {
-      name: appName,
-      client_id: keygen.url(keygen.large),
-      client_secret: keygen.url(keygen.large),
-    });
+    await createApp(token!, appName);
 
     setIsModalOpen(false);
     // Re-fetch apps to update the list
@@ -79,26 +92,26 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen ">
       <header className=" shadow">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-row justify-between max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold ">Authrocket 🚀</h1>
+          <button className="border p-2 rounded-xl" onClick={()=>{
+            localStorage.clear()
+            router.back()
+            router.back()
+          }} >Logout</button>
         </div>
       </header>
       <main>
         <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           <div className="px-4 py-6 sm:px-0">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="mb-4 px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              Create App
-            </button>
+           
             <div className="flex">
               <div className="w-1/3 pr-4">
                 <h2 className="text-xl font-semibold mb-2">Apps</h2>
                 <ul className="space-y-2">
                   {apps.map((app) => (
                     <li
-                    key={app.id}
+                      key={app.id}
                       onClick={() => handleAppClick(app)}
                       className={`cursor-pointer p-2  rounded-md shadow ${
                         selectedApp?.id == app.id ? "border" : ""
@@ -121,6 +134,16 @@ export default function Dashboard() {
                       </div>
                     </li>
                   ))}
+                   <li className="flex justify-center">
+                      <button
+                        onClick={() => {
+                          setIsModalOpen(true)
+                        }}
+                        className="p-2 bg-black border"
+                      >
+                        <FaPlus className="inline"></FaPlus> Add User
+                      </button>
+                    </li>
                 </ul>
               </div>
               <div className="w-2/3">
@@ -128,8 +151,34 @@ export default function Dashboard() {
                 {selectedApp ? (
                   <ul className="space-y-2">
                     {users.map((user) => (
-                      <li key={user.username} className="p-2 border rounded-md shadow">
-                        {user.username}
+                      <li
+                        key={user.username}
+                        className="p-2 border rounded-md shadow"
+                      >
+                        <div className="flex flex-row justify-between">
+                          <div >
+                            <div className="inline pr-2">
+                              <FaUser className="inline"></FaUser>
+                            </div>
+                            {user.username}
+                          </div>
+                          <div>
+                            <FaTrash
+                              onClick={async () => {
+                                await deleteUser(
+                                  selectedApp.client_id,
+                                  selectedApp.client_secret,
+                                  user.id
+                                );
+                                await fetchUsers(selectedApp.id!);
+                              }}
+                              color="red"
+                              className="inline"
+                            >
+                              {" "}
+                            </FaTrash>
+                          </div>
+                        </div>
                       </li>
                     ))}
                     {addUser && (
@@ -155,13 +204,15 @@ export default function Dashboard() {
                         <div className="flex justify-end my-2">
                           <button
                             onClick={async () => {
-                                setaddUserUsername("")
-                                setaddUserPassword("")
-                                setaddUser(false)
+                              setaddUserUsername("");
+                              setaddUserPassword("");
+                              setaddUser(false);
                               await registerUser({
                                 app: selectedApp.id!,
                                 password: addUserPassword,
                                 username: addUserUsername,
+                                client_id: selectedApp.client_id,
+                                client_secret: selectedApp.client_secret,
                               });
                               await fetchUsers(selectedApp.id!);
                             }}
@@ -241,9 +292,7 @@ export function CreateAppModal({
     <div className="fixed inset-0  bg-black  overflow-y-auto h-full w-full">
       <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md ">
         <div className="mt-3 text-center">
-          <h3 className="text-lg leading-6 font-medium ">
-            Create New App
-          </h3>
+          <h3 className="text-lg leading-6 font-medium ">Create New App</h3>
           <form className="mt-2  py-3" onSubmit={handleSubmit}>
             <input
               type="text"

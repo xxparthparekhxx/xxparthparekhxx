@@ -50,7 +50,7 @@ export async function adminLogin(
 // App Functions
 export async function createApp(
   token: string,
-  app: App
+  name: string
 ): Promise<AppCreateResponse> {
   return apiFetch<AppCreateResponse>(`${API_URL}app/create/`, {
     method: "POST",
@@ -58,7 +58,7 @@ export async function createApp(
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(app),
+    body: JSON.stringify({ name }),
   });
 }
 
@@ -82,6 +82,23 @@ export async function listApps(token: string): Promise<App[]> {
       Authorization: `Bearer ${token}`,
     },
   });
+}
+export async function deleteUser(
+  clientId: string,
+  clientSecret: string,
+  userId: number
+): Promise<void> {
+  try {
+    await apiFetch<void>(`${API_URL}user/delete/${userId}/`, {
+      method: "DELETE",
+      headers: {
+        "Client-ID": clientId,
+        "Client-Secret": clientSecret,
+      },
+    });
+  } catch {
+    console.log("deleted successfully");
+  }
 }
 
 // User Functions

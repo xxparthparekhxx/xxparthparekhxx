@@ -32,6 +32,8 @@ export interface CustomUser {
     username: string;
     password: string;
     app: number; // app_id
+    client_id: string;
+    client_secret: string; 
 }
 
 export interface UserLoginResponse {
@@ -39,6 +41,7 @@ export interface UserLoginResponse {
 }
 
 export interface User {
+    id:number;
     username: string;
     app: string; // app name
 }

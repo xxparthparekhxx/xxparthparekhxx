@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { adminLogin } from '../../../src/authwave/fetchers';
 import { ToastContainer, toast } from 'react-toastify';
@@ -30,6 +30,12 @@ export default function Login() {
             });
     }
   };
+  useEffect(() => {
+    const token =localStorage.getItem("adminToken")
+    if (token != null){
+      router.push("/Projects/authwave/dashboard");
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-black flex flex-col justify-center py-12 sm:px-6 lg:px-8">
