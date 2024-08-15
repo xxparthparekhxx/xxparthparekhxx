@@ -1,6 +1,6 @@
 export default {
     title: "Parth Parekh | Fullstack Developer & AI Specialist",
-    description: "Experienced Fullstack Developer with a diploma in AI, specializing in web development, JavaScript, React, Node.js, and artificial intelligence. Portfolio and professional services of Parth Parekh.",
+    description: "Fullstack Developer with AI expertise. Web dev, JavaScript, React, Node.js, and AI solutions. Parth Parekh's portfolio and services.",
     openGraph: {
       type: 'website',
       locale: 'en_US',
@@ -23,7 +23,7 @@ export default {
     additionalMetaTags: [
       {
         name: 'keywords',
-        content: 'Parth Parekh, Fullstack Developer, AI Specialist, Artificial Intelligence, Web Development, JavaScript, React, Node.js, Software Engineer, Machine Learning, xxparthparekhxx, python, Flutter, React Naive, tailwind, graphql, django, dart, docker, lua'
+        content: 'Parth Parekh, Fullstack Developer, AI Specialist, Artificial Intelligence, Web Development, JavaScript, React, Node.js, Software Engineer, Machine Learning, xxparthparekhxx'
       },
       {
         name: 'author',
@@ -31,6 +31,21 @@ export default {
       }
     ],
     canonical: 'https://parthp.in/',
+    siteMap: 'https://parthp.in/api/sitemap',
+    additionalLinkTags: [
+      {
+        rel: 'me',
+        href: 'https://github.com/xxparthparekhxx'
+      },
+      {
+        rel: 'me',
+        href: 'https://twitter.com/parthparekhx'
+      },
+      {
+        rel: 'me',
+        href: 'https://www.linkedin.com/in/xxparthparekhxx/'
+      }
+    ]
   };
 export const QrSeo =  {
     title: "Qr Code Genreator (free)",
