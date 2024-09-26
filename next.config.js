@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: '**.dl.dropboxusercontent.com',
+        protocol: 'http',
+        hostname: 'api.parthp.in',
       },
     ],
   },

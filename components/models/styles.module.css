@@ -3,6 +3,7 @@
   height: 1.5rem;
   object-fit: contain;
   border-radius: 50%;
+  background-color: white;
 }
 
 .StackName {

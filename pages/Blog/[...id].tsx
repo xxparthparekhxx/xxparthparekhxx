@@ -1,131 +1,74 @@
-import { useRouter } from "next/router";
-import React from "react";
-import ProjectCard from "../../components/models/Projects";
-import Stack from "../../components/models/Stack";
-import { Navbar } from "../../components/NavBar/Navbar";
-import {
-  fetchPostById,
-  fetchPosts,
-  fetchProjectById,
-  fetchProjects,
-  fetchStacks,
-} from "../../src/api";
-import Markdown from "react-markdown";
-import { Post, Project } from "../../src/models";
-import { Corrousal } from "../../components/common/Corrousal";
-const Blog = ({ post }: { post: Post }) => {
-  const buttonStyle = {
-    padding: "10px",
-    borderRadius: "5px",
-    boxShadow: "0px 0px 10px #4ade80",
-    border: "solid 1px",
-    margin: "4px 8px 4px 0px",
-    backgroundColor: "black",
-  };
-  const imageUrl = post.Media.find((media) => !media.is_logo);
+import React from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import { GetStaticProps, GetStaticPaths } from 'next';
+import Markdown from 'react-markdown';
+
+import { Navbar } from '../../components/NavBar/Navbar';
+import Stack from '../../components/models/Stack';
+import { fetchPostById, fetchPosts } from '../../src/api';
+import { Post } from '../../src/models';
+
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
+
+interface BlogProps {
+  post: Post;
+}
+
+const Blog: React.FC<BlogProps> = ({ post }) => {
+  const logoMedia = post.Media.find((media) => media.is_logo);
 
   return (
     <Navbar>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div
-          style={{
-            padding: "20px",
-            width: "100%",
-            maxWidth: "1200px",
-          }}
-        >
-          <div>
-            <div
-              style={{
-                margin: "15px",
-                border: "solid 1px 0px 1px 0px",
-                borderRadius: "20px",
-                padding: "20px",
-                boxShadow: "0px 0px 5px #4ade80",
-                transition:
-                  "box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
-                flexWrap: "wrap",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                backgroundColor: "black",
-              }}
-            >
-              <div>
-                <h2 style={{ marginBottom: "5px" }}>{post.title}</h2>
+      <div className="flex justify-center items-center p-4">
+        <Card className="w-full max-w-4xl bg-black text-white shadow-lg">
+          <CardHeader className="border-b border-gray-700">
+            <div className="flex justify-between items-center">
+              <h1 className="text-2xl font-bold">{post.title}</h1>
+              <Button variant="ghost" size="sm">
+                Share
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-6 mt-4">
+            <section>
+              <h2 className="text-xl font-semibold mb-2">Categories</h2>
+              <div className="flex flex-wrap gap-2">
+                {post.categories.map((stack) => (
+                  <Stack
+                    key={stack.id}
+                    {...stack}
+                    iconOnly={false}
+                    selected={false}
+                    setStackSort={() => {}}
+                  />
+                ))}
               </div>
-              <div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    flexWrap: "wrap",
-                  }}
-                >
-                  <a style={buttonStyle}>Share</a>
-                </div>
+            </section>
+            {logoMedia && (
+              <div className="flex justify-center">
+                <Image
+                  src={logoMedia.img!}
+                  alt="Post logo"
+                  width={800}
+                  height={400}
+                  className="rounded-lg"
+                />
               </div>
-            </div>
-
-            <h2
-              style={{
-                padding: "20px",
-              }}
-            >
-              Categories
-            </h2>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                // border: "solid 1px white",
-              }}
-            >
-              {post.categories.map((stack) => (
-                <Stack
-                  iconOnly={false}
-                  key={stack.id}
-                  {...stack}
-                  selected={false}
-                  setStackSort={() => {}}
-                ></Stack>
-              ))}
-            </div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <img
-              style={{
-                width: "80%",
-              }}
-              src={imageUrl?.img!}
-              alt="logo"
-            />
-          </div>
-          <div>
-            <div style={{ margin: "20px", overflow:"scroll"}}>
-              <Markdown >{post.content}</Markdown>
-            </div>
-          </div>
-        </div>
+            )}
+            <article className="prose prose-invert max-w-none">
+              <Markdown className={"markdown"}>{post.content}</Markdown>
+            </article>
+          </CardContent>
+        </Card>
       </div>
     </Navbar>
   );
 };
 
-
-export async function getStaticProps({ params }: { params: { id: string[] } }) {
-  const id = params.id.join('/'); // Join the array elements if needed
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const id = Array.isArray(params?.id) ? params.id.join('/') : params?.id;
   const post = await fetchPostById(Number(id));
 
   if (!post) {
@@ -133,21 +76,20 @@ export async function getStaticProps({ params }: { params: { id: string[] } }) {
   }
 
   return {
-    props: {
-      post,
-    },
-    revalidate: 1800, // Revalidate every 60 seconds
+    props: { post },
+    revalidate: 60,
   };
-}
+};
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await fetchPosts();
-  
+
   return {
-    paths: posts.map((post) => ({ 
-      params: { id: [post.id.toString()] } // Wrap the id in an array
+    paths: posts.map((post) => ({
+      params: { id: [post.id.toString()] },
     })),
     fallback: 'blocking',
   };
-}
+};
+
 export default Blog;
