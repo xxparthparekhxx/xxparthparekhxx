@@ -1,5 +1,0 @@
-<<<<<<< Updated upstream
-{}
-=======
-{"/_app":"pages/_app.js","/Contact":"pages/Contact.html","/_document":"pages/_document.js","/Projects/Qr":"pages/Projects/Qr.html","/Projects/authwave/Login":"pages/Projects/authwave/Login.html","/Projects/authwave/dashboard":"pages/Projects/authwave/dashboard.html","/Projects/authwave/register":"pages/Projects/authwave/register.html","/Projects/authwave":"pages/Projects/authwave.html","/api/sitemap":"pages/api/sitemap.js","/Blog":"pages/Blog.js","/Blog/[...id]":"pages/Blog/[...id].js","/Experience/[...id]":"pages/Experience/[...id].js","/Work/[...id]":"pages/Work/[...id].js","/":"pages/index.js","/_error":"pages/_error.js","/404":"pages/404.html"}
->>>>>>> Stashed changes
