@@ -55,6 +55,7 @@ const Parth = {
     <img src="https://img.shields.io/badge/Heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white">
     <img src="https://img.shields.io/badge/-figma-FFFFE0?logo=figma&logoColor=OrangeRed&style=for-the-badge">
     <img src="https://img.shields.io/badge/-xd-FFEFD5?logo=adobe-xd&logoColor=purple&style=for-the-badge">
+    <img src="https://img.shields.io/badge/-AWS-FFEFD5?logo=amazon-web-services&logoColor=purple&style=for-the-badge">
 </p>
 
 <h1>📈 Github Stats</h1>
