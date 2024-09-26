@@ -68,7 +68,7 @@ const Blog: React.FC<BlogProps> = ({ post }) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const id = Array.isArray(params?.id) ? params.id.join('/') : params?.id;
+  const id = Array.isArray(params?.id) ? params?.id.join('/') : params?.id;
   const post = await fetchPostById(Number(id));
 
   if (!post) {
