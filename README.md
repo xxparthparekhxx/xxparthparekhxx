@@ -4,15 +4,6 @@
 </h1>
 
 <div align="center">
-  <a href="https://parthp.in/" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-FF6B6B?style=for-the-badge&logo=safari&logoColor=white" alt="Portfolio"/>
-  </a>
-  <a href="https://www.hackerrank.com/xx_parthparekh_1" target="_blank">
-    <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" alt="HackerRank"/>
-  </a>
-</div>
-
-<div align="center">
   <h3>💫 Self-Taught Developer | System Design Enthusiast | AI Architect</h3>
   <p>Passionate about building scalable systems and exploring the frontiers of AI technology</p>
 </div>
