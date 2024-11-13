@@ -29,13 +29,13 @@ const Parth = {
     currentFocus: "System Design & Architecture",
     expertise: {
         mobile: ["Flutter", "Android", "Kotlin"],
-        frontend: ["React", "HTML5/CSS3", "JavaScript"],
-        backend: ["Node.js", "Express", "Flask", ".NET"],
+        frontend: ["Next.js","React", "HTML5/CSS3", "JavaScript"],
+        backend: ["Django(DRF)","Node.js", "Express", "Flask", ".NET"],
         databases: ["MongoDB", "PostgreSQL", "MySQL", "SQLite"],
         cloud: ["AWS", "Firebase", "Heroku"],
         design: ["Figma", "Adobe XD"]
     },
-    funFact: "Turning coffee into code since 2020 ☕"
+    funFact: "Turning coffee into code since 2019 ☕"
 };
 ```
 
