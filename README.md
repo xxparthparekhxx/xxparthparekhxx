@@ -14,7 +14,7 @@
 
 ```javascript
 const Parth = {
-    age: 22,
+    age: 23,
     location: "India",
     specializations: ["AI/ML", "Web Development", "Mobile Development"],
     currentFocus: "System Design & Architecture",
