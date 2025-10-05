@@ -1,99 +1,73 @@
-<h1 align="center">
-  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/> 
-  Hi, I'm Parth Parekh
-</h1>
+# Hi there, I'm Parth Parekh 👋
+
+**AI Architect • Full-Stack Developer • System Design Enthusiast**
+
+I'm a passionate self-taught developer specializing in building scalable systems and exploring cutting-edge AI technologies. With expertise spanning mobile, web, and backend development, I focus on creating robust, maintainable solutions that solve real-world problems.
+
+---
+
+## 🚀 About Me
+
+- 🎯 **Current Focus:** System Design & Architecture, AI/ML Implementation
+- 🌍 **Location:** India
+- 💼 **Experience:** 5+ years of hands-on development across multiple tech stacks
+- 🎓 **Learning Philosophy:** Continuous improvement through self-directed learning and real-world application
+- ⚡ **Fun Fact:** Turning coffee into code since 2019
+
+---
+
+## 💻 Technical Expertise
+
+### Mobile Development
+![Flutter](https://img.shields.io/badge/-Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
+![Android](https://img.shields.io/badge/-Android-3DDC84?style=flat-square&logo=android&logoColor=white)
+![Kotlin](https://img.shields.io/badge/-Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+
+### Frontend Development
+![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+
+### Backend Development
+![Django](https://img.shields.io/badge/-Django-092E20?style=flat-square&logo=django&logoColor=white)
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white)
+![Flask](https://img.shields.io/badge/-Flask-000000?style=flat-square&logo=flask&logoColor=white)
+![.NET](https://img.shields.io/badge/-.NET-512BD4?style=flat-square&logo=.net&logoColor=white)
+
+### Programming Languages
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Java](https://img.shields.io/badge/-Java-007396?style=flat-square&logo=openjdk&logoColor=white)
+![C++](https://img.shields.io/badge/-C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
+![Kotlin](https://img.shields.io/badge/-Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+
+### Databases & Cloud
+![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![AWS](https://img.shields.io/badge/-AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
+![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
+![Heroku](https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku&logoColor=white)
+
+### Design Tools
+![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=white)
+![Adobe XD](https://img.shields.io/badge/-Adobe_XD-FF61F6?style=flat-square&logo=adobe-xd&logoColor=white)
+
+---
+
+## 📊 GitHub Statistics
 
 <div align="center">
-  <h3>💫 AI Architect | Self-Taught Developer | System Design Enthusiast  </h3>
-  <p>Passionate about building scalable systems and exploring the frontiers of AI technology</p>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=xxparthparekhxx&show_icons=true&theme=radical&include_all_commits=true&count_private=true&hide_border=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=xxparthparekhxx&layout=compact&langs_count=8&theme=radical&hide_border=true"/>
+</div>
+
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=xxparthparekhxx&theme=radical&hide_border=true" alt="GitHub Streak"/>
 </div>
 
 ---
 
-### 🧙‍♂️ Quick Bio
-
-```javascript
-const Parth = {
-    age: 23,
-    location: "India",
-    specializations: ["AI/ML", "Web Development", "Mobile Development"],
-    currentFocus: "System Design & Architecture",
-    expertise: {
-        mobile: ["Flutter", "Android", "Kotlin"],
-        frontend: ["Next.js","React", "HTML5/CSS3", "JavaScript"],
-        backend: ["Django(DRF)","Node.js", "Express", "Flask", ".NET"],
-        databases: ["MongoDB", "PostgreSQL", "MySQL", "SQLite"],
-        cloud: ["AWS", "Firebase", "Heroku"],
-        design: ["Figma", "Adobe XD"]
-    },
-    funFact: "Turning coffee into code since 2019 ☕"
-};
-```
-
-### 🛠️ Tech Stack
-
-<details>
-<summary>Mobile Development</summary>
-<br>
-<p align="center">
-  <img src="https://img.shields.io/badge/-Flutter-61DAFB?logo=flutter&logoColor=white&style=for-the-badge">
-  <img src="https://img.shields.io/badge/-android-7F52FF?logo=android&logoColor=white&style=for-the-badge">
-  <img src="https://img.shields.io/badge/-kotlin-7F52FF?logo=kotlin&logoColor=white&style=for-the-badge">
-</p>
-</details>
-
-<details>
-<summary>Web Development</summary>
-<br>
-<p align="center">
-  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white">
-  <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white">
-  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E">
-  <img src="https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white">
-  <img src="https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge">
-</p>
-</details>
-
-<details>
-<summary>Backend & Programming Languages</summary>
-<br>
-<p align="center">
-  <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white">
-  <img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB">
-  <img src="https://img.shields.io/badge/C++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white">
-  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54">
-  <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white">
-</p>
-</details>
-
-<details>
-<summary>Databases & Cloud</summary>
-<br>
-<p align="center">
-  <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white">
-  <img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white">
-  <img src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white">
-  <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white">
-  <img src="https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase">
-</p>
-</details>
-
-### 📊 GitHub Statistics
-
-<div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=xxparthparekhxx&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=xxparthparekhxx&layout=compact&langs_count=8&theme=tokyonight"/>
-</div>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=xxparthparekhxx&theme=tokyonight" alt="GitHub Streak"/>
-</div>
-
----
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=xxparthparekhxx&style=flat-square&color=blue" alt="Profile views"/>
-  
-  ### 📫 Let's Connect!
-  <p>Feel free to reach out for collaborations or just a friendly chat!</p>
-</div>
